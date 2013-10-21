@@ -1,3 +1,4 @@
 # alias
 
+alias ls="ls -G"
 alias mv="mv -v"
