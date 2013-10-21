@@ -1,3 +1,5 @@
+alias ls="gls --color=auto"
+
 export PATH=/usr/bin:/usr/sbin:/sbin:/usr/X11/bin:~/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 

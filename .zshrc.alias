@@ -1,5 +1,6 @@
 # alias
 
+## alias for ls is in .zshrc.osx or .zshrc.linux
 # alias ls="ls -G"
-alias ls="gls --color=auto"
+# alias ls="gls --color=auto"
 alias mv="mv -v"
