@@ -17,6 +17,7 @@ endif
 syntax on
 set background=dark
 colorscheme solarized
+let g:solarized_termcolors=256
 
 " Move cursor by display lines when wrapping
 nnoremap j gj

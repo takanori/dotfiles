@@ -1,4 +1,5 @@
 # alias
 
-alias ls="ls -G"
+# alias ls="ls -G"
+alias ls="gls --color=auto"
 alias mv="mv -v"
