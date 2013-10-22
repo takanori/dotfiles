@@ -3,4 +3,10 @@
 ## alias for ls is in .zshrc.osx or .zshrc.linux
 # alias ls="ls -G"
 # alias ls="gls --color=auto"
+#
 alias mv="mv -v"
+
+
+function vimman() {
+	vim -c 'Ref man '$1 -c 'winc j' -c 'q'
+}

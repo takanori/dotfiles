@@ -162,7 +162,6 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'YankRing.vim'
 
-
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
 
