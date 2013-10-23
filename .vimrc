@@ -2,6 +2,7 @@ scriptencoding utf-8
 set encoding=utf-8
 set showmode
 set scrolloff=10
+" set clipboard=unnamed,autoselect
 set clipboard+=unnamed
 
 set backup
@@ -160,7 +161,7 @@ NeoBundle 'tpope/vim-surround'
 " NeoBundle 'mattn/zencoding-vim' " Moved to emmet-vim
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'Raimondi/delimitMate'
-NeoBundle 'YankRing.vim'
+" NeoBundle 'YankRing.vim'
 
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
