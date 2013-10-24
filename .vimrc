@@ -17,8 +17,9 @@ endif
 
 syntax on
 set background=dark
+" let g:solarized_visibility = "high"
+" let g:solarized_contrast = "high"
 colorscheme solarized
-let g:solarized_termcolors=256
 
 " Move cursor by display lines when wrapping
 nnoremap j gj
