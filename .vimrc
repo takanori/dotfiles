@@ -812,6 +812,9 @@ set cmdheight=2
 " Display line numbers on the left
 " 行番号を表示
 set number
+" toggle number
+nnoremap <Leader>n :set invnumber<CR>
+
 
 " Quickly time out on keycodes, but never time out on mappings
 " キーコードはすぐにタイムアウト。マッピングはタイムアウトしない
