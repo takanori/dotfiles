@@ -162,7 +162,7 @@ NeoBundle 'tpope/vim-surround'
 " NeoBundle 'mattn/zencoding-vim' " Moved to emmet-vim
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'Raimondi/delimitMate'
-" NeoBundle 'YankRing.vim'
+NeoBundle 'YankRing.vim'
 
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
