@@ -31,9 +31,9 @@ nnoremap <Up>   gk
 nnoremap <C-L> 8zl
 nnoremap <C-H> 8zh
 
-" swqp colon and semi colon
-nnoremap ; :
-nnoremap : ;
+" " swqp colon and semi colon
+" nnoremap ; :
+" nnoremap : ;
 
 " Show encoding
 set laststatus=2
