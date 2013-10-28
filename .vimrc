@@ -35,7 +35,7 @@ nnoremap <C-H> 8zh
 set laststatus=2
 "set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\ 
 
-" Allow saving of files as sudo when I forgot to start vim using sudo.
+" Allow saving of files as sudo
 cmap w!! w !sudo tee > /dev/null %
 
 " Change indent continuously in visual mode
@@ -43,11 +43,6 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Show em space
-""""""""""""""""""""""""""""""
-"全角スペースを表示
-""""""""""""""""""""""""""""""
-"コメント以外で全角スペースを指定しているので scriptencodingと、
-"このファイルのエンコードが一致するよう注意！
 "全角スペースが強調表示されない場合、ここでscriptencodingを指定すると良い。
 "scriptencoding cp932
 
@@ -67,13 +62,13 @@ if has('syntax')
   call ZenkakuSpace()
 endif
 
-" clipboard settings ========================================
-if OSTYPE == "Darwin\n"
-	vmap <Leader>c :w !pbcopy<CR><CR>
-	" MacVim can share the copied text with clipboard, so this setting is not necessary
-elseif OSTYPE == "Linux\n"
-	vmap <Leader>c :w !xsek -lb<CR><CR>
-endif
+" " clipboard settings ========================================
+" if OSTYPE == "Darwin\n"
+	" vmap <Leader>c :w !pbcopy<CR><CR>
+	" " MacVim can share the copied text with clipboard, so this setting is not necessary
+" elseif OSTYPE == "Linux\n"
+	" vmap <Leader>c :w !xsek -lb<CR><CR>
+" endif
 
 " tab editor settings =======================================
 imap <C-f> <ESC>:tabnext<CR>
@@ -87,7 +82,7 @@ map  <C-b> :tabprevious<CR>
 "=============================================================
 "=============================================================
 
-" NeoBundel Cojfigulations ===================================
+" NeoBundel Configulations ===================================
 
 if has('vim_starting')
 	set nocompatible               " Be iMproved
@@ -140,7 +135,6 @@ NeoBundle 'mojo.vim'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'timcharper/textile.vim'
-
 " Omni
 NeoBundle 'c9s/perlomni.vim'
 
@@ -155,7 +149,7 @@ NeoBundle 'tyru/open-browser.vim'
 " NeoBundle 'scrooloose/nerdtree.git' "nerdtree is included in trinity
 NeoBundle 'wesleyche/SrcExpl'
 NeoBundle 'thinca/vim-qfreplace'
-"NeoBundle 'taglist.vim' "taglist should be downloaded from http://www.vim.org/scripts/download_script.php?src_id=19574
+"NeoBundle 'taglist.vim' "Download from http://www.vim.org/scripts/download_script.php?src_id=19574
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'tpope/vim-surround'
@@ -827,21 +821,10 @@ set pastetoggle=<F12>
 " Attempt to determine the type of a file based on its name and possibly its
 " contents.  Use this to allow intelligent auto-indenting for each filetype,
 " and for plugins that are filetype specific.
-" ファイル名と内容によってファイルタイプを判別し、ファイルタイププラグインを有効にする
 filetype indent plugin on
-
-
-"------------------------------------------------------------
-" Mappings {{{1
-" マッピング
-"
-" Useful mappings
-
-" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
-" which is the default
-" Yの動作をDやCと同じにする
+" Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy, which is the default
 map Y y$
-
-" Map <C-K> (redraw screen) to also turn off search highlighting until the
-" next search
+" Map <C-K> (redraw screen) to also turn off search highlighting until the next search
 nnoremap <C-K> :nohl<CR><C-L>
+
+set cindent
