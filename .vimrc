@@ -31,6 +31,10 @@ nnoremap <Up>   gk
 nnoremap <C-L> 8zl
 nnoremap <C-H> 8zh
 
+" swqp colon and semi colon
+nnoremap ; :
+nnoremap : ;
+
 " Show encoding
 set laststatus=2
 "set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=\ (%v,%l)/%L%8P\ 
@@ -155,7 +159,7 @@ NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'tpope/vim-surround'
 " NeoBundle 'mattn/zencoding-vim' " Moved to emmet-vim
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'Raimondi/delimitMate'
+" NeoBundle 'Raimondi/delimitMate' " delimitMate breaks the redo features
 NeoBundle 'YankRing.vim'
 
 " Color Scheme
@@ -423,13 +427,13 @@ autocmd FileType unite call unite#custom#default_action('directory', 'vimfiler')
 " unite-grep settings ======================================
 
 " grep検索
-nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> <Leader>g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 
 " カーソル位置の単語をgrep検索
-nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
+nnoremap <silent> <Leader>cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
 
 " grep検索結果の再呼出
-nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+nnoremap <silent> <Leader>a  :<C-u>UniteResume search-buffer<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
 " Shift_JISの問題を回避したものをinstallしたはずだが，上手く動かないのでgrepのままにしておく
