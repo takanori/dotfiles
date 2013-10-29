@@ -159,7 +159,7 @@ NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'tpope/vim-surround'
 " NeoBundle 'mattn/zencoding-vim' " Moved to emmet-vim
 NeoBundle 'mattn/emmet-vim'
-" NeoBundle 'Raimondi/delimitMate' " delimitMate breaks the redo features
+NeoBundle 'Raimondi/delimitMate' " delimitMate breaks the redo features
 NeoBundle 'YankRing.vim'
 
 " Color Scheme
