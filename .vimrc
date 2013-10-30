@@ -154,6 +154,7 @@ NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'wesleyche/SrcExpl'
 NeoBundle 'thinca/vim-qfreplace'
 "NeoBundle 'taglist.vim' "Download from http://www.vim.org/scripts/download_script.php?src_id=19574
+NeoBundle "majutsushi/tagbar"
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'tpope/vim-surround'
@@ -545,13 +546,9 @@ let g:vimfiler_as_default_explorer = 1
 
 " taglist settings ========================================
 set tags=tags,~/perl5/perlbrew/perls/perl-5.18.1/lib/tags
-" let g:Tlist_Ctags_Cmd = "/usr/local/bin/ctags" "ctagsのパス
-" let g:Tlist_Ctags_Cmd = "/Applications/MacVim.app/Contents/MacOS/ctags" "ctagsのパス
-let g:Tlist_Show_One_File = 1 "現在編集中のソースのタグしか表示しない
-let g:Tlist_Exit_OnlyWindow = 1 "taglistのウィンドーが最後のウィンドーならばVimを閉じる
-let g:Tlist_Use_Right_Window = 1 "右側でtaglistのウィンドーを表示
-map <silent> <leader>t :TlistToggle<CR>
-
+let g:tagbar_autoclose = 1
+" nnoremap <silent> <F9> :TagbarToggle<CR>
+nnoremap <silent> <Leader>t :TagbarToggle<CR>
 
 " quickrun settings ========================================
 nmap <Leader>r <plug>(quickrun)
