@@ -124,7 +124,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Shougo/vimshell'
+" NeoBundle 'Shougo/vimshell'
 NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'tsukkee/unite-help'
 " NeoBundle 'h1mesuke/unite-outline'
@@ -138,7 +138,7 @@ NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'mojo.vim'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'timcharper/textile.vim'
+" NeoBundle 'timcharper/textile.vim'
 " Omni
 NeoBundle 'c9s/perlomni.vim'
 
@@ -243,6 +243,26 @@ if s:meet_neocomplete_requirements()
 	"let g:neocomplete#enable_auto_select = 1
 	"let g:neocomplete#disable_auto_complete = 1
 	"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+	
+	
+	" Enable omni completion.
+	autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+	autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+	autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+	" Enable heavy omni completion.
+	if !exists('g:neocomplete#sources#omni#input_patterns')
+	  let g:neocomplete#sources#omni#input_patterns = {}
+	endif
+	"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+	"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+	"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+	" For perlomni.vim setting.
+	" https://github.com/c9s/perlomni.vim
+	let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 else
     " 今までの neocomplcache の設定
 
@@ -338,61 +358,6 @@ else
 
 endif
 
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
-
-" For perlomni.vim setting.
-" https://github.com/c9s/perlomni.vim
-let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-
-
-" " neocomplcache configulations ================================
-" " Disable AutoComplPop.
-" let g:acp_enableAtStartup = 0
-" " Use neocomplcache.
-" let g:neocomplcache_enable_at_startup = 1
-" " Use underbar completion.
-" let g:neocomplcache_enable_underbar_completion = 1
-" " Set minimum syntax keyword length.
-" let g:neocomplcache_min_syntax_length = 3
-" let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
- " " Use smartcase.
-" let g:neocomplcache_enable_smart_case = 1
-" " Use camel case completion.
-" let g:neocomplcache_enable_camel_case_completion = 1
-" " Select with <TAB>
-" inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-
-" let g:neocomplcache_ctags_arguments_list = {
-  " \ 'perl' : '-R -h ".pm"'
-  " \ }
-
-" let g:neocomplcache_snippets_dir = "~/.vim/snippets"
-" " Define dictionary.
-" let g:neocomplcache_dictionary_filetype_lists = {
-    " \ 'default'    : '',
-    " \ 'perl'       : $HOME . '/.vim/dict/perl.dict'
-    " \ }
-
-" " Define keyword.
-" if !exists('g:neocomplcache_keyword_patterns')
-  " let g:neocomplcache_keyword_patterns = {}
-" endif
-" let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
-
 
 " neosnippet settings ======================================
 " Plugin key-mappings.
@@ -414,11 +379,20 @@ if has('conceal')
 endif
 
 
-" unite settings ======================================
+" ==========================================================
+" Unite ====================================================
+" ==========================================================
+let g:unite_winwidth = 40
+nnoremap <Leader>u :Unite 
+nnoremap <Leader>f :Unite file_rec<CR>
+
 " let g:unite_enable_start_insert = 1
 " 大文字小文字を区別しない
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
+
+" unite-outline  ===========================================
+" nnoremap <silent> <Leader>o :<C-u>Unite -vertical -no-quit outline<CR>
 
 
 " unite-bookmark settings ======================================
@@ -444,6 +418,11 @@ nnoremap <silent> <Leader>a  :<C-u>UniteResume search-buffer<CR>
   " let g:unite_source_grep_recursive_opt = ''
 " endif
 
+
+" ==========================================================
+" ==========================================================
+" ==========================================================
+"
 
 " syntastic settings =======================================
 augroup filetypedetectgroup
@@ -497,10 +476,6 @@ function! s:open_kobito(...)
     endif
 endfunction
 
-" textile settings ========================================
-let g:TextileBrowser="Google Chrome"
-
-
 " 引数のファイル(複数指定可)を Kobitoで開く
 " （引数無しのときはカレントバッファを開く
 command! -nargs=* Kobito call s:open_kobito(<f-args>)
@@ -509,32 +484,25 @@ command! -nargs=0 KobitoClose call system("osascript -e 'tell application \"Kobi
 " Kobito にフォーカスを移す
 command! -nargs=0 KobitoFocus call system("osascript -e 'tell application \"Kobito\" to activate'")
 
+
+" " textile settings ========================================
+" let g:TextileBrowser="Google Chrome"
+
+
 " perl tidy ================================================
 nnoremap ,pt <Esc>:%! perltidy<CR>
 vnoremap ,pt <Esc>:'<,'>! perltidy<CR>
 
-" ==========================================================
-" Unite ====================================================
-" ==========================================================
-let g:unite_winwidth = 40
-nnoremap <Leader>u :Unite 
-nnoremap <Leader>f :Unite file_rec<CR>
 
-" unite-outline  ===========================================
-" nnoremap <silent> <Leader>o :<C-u>Unite -vertical -no-quit outline<CR>
 
-" ==========================================================
-" ==========================================================
-" ==========================================================
-
-" vimshell settings ========================================
-nnoremap <silent> vs :VimShell<CR>
-nnoremap <silent> vp :VimShellPop<CR>
-nnoremap <silent> vt :VimShellTab<CR>
-" nnoremap <silent> vsc :VimShellCreate<CR>
-let g:vimshell_prompt_expr = 'getcwd()." > "'
-let g:vimshell_prompt_pattern = '^\f\+ > '
-" let g:vimshell_enable_smart_case = 1
+" " vimshell settings ========================================
+" nnoremap <silent> vs :VimShell<CR>
+" nnoremap <silent> vp :VimShellPop<CR>
+" nnoremap <silent> vt :VimShellTab<CR>
+" " nnoremap <silent> vsc :VimShellCreate<CR>
+" let g:vimshell_prompt_expr = 'getcwd()." > "'
+" let g:vimshell_prompt_pattern = '^\f\+ > '
+" " let g:vimshell_enable_smart_case = 1
 
 
 " vimfiler settings ========================================
@@ -544,7 +512,7 @@ let g:vimfiler_safe_mode_by_default = 0
 let g:vimfiler_as_default_explorer = 1
 " let g:vimfiler_split_rule = "belowright"
 
-" taglist settings ========================================
+" tagbar settings ========================================
 set tags=tags,~/perl5/perlbrew/perls/perl-5.18.1/lib/tags
 let g:tagbar_autoclose = 1
 " nnoremap <silent> <F9> :TagbarToggle<CR>
@@ -699,124 +667,45 @@ autocmd MyAutoCmd BufReadPost * delmarks!
 
 
 
-"------------------------------------------------------------
-" Features {{{1
-"
-" These options and commands enable some very useful features in Vim, that
-" no user should have to live without.
 
-" Set 'nocompatible' to ward off unexpected things that your distro might
-" have made, as well as sanely reset options when re-sourcing .vimrc
-" Vi互換モードをオフ（Vimの拡張機能を有効）
 set nocompatible
-
-"------------------------------------------------------------
-" Must have options {{{1
-"
-" These are highly recommended options.
-" 強く推奨するオプション
-
-" One of the most important options to activate. Allows you to switch from an
-" unsaved buffer without saving it first. Also allows you to keep an undo
-" history for multiple files. Vim will complain if you try to quit without
-" saving, and swap files will keep you safe if your computer crashes.
-" バッファを保存しなくても他のバッファを表示できるようにする
+" One of the most important options to activate. Allows you to switch from an unsaved buffer without saving it first. Also allows you to keep an undo history for multiple files. Vim will complain if you try to quit without saving, and swap files will keep you safe if your computer crashes.
 set hidden
-
 " Better command-line completion
-" コマンドライン補完を便利に
 set wildmenu
-
 " Show partial commands in the last line of the screen
-" タイプ途中のコマンドを画面最下行に表示
 set showcmd
-
-" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
-" mapping of <C-L> below)
-" 検索語を強調表示（<C-L>を押すと現在の強調表示を解除する）
+" Highlight searches (use <C-L> to temporarily turn off highlighting; see the mapping of <C-L> below)
 set incsearch
 set hlsearch
-
-" Modelines have historically been a source of security vulnerabilities.  As
-" such, it may be a good idea to disable them and use the securemodelines
-" script, <http://www.vim.org/scripts/script.php?script_id=1876>.
-" 歴史的にモードラインはセキュリティ上の脆弱性になっていたので、
-" オフにして代わりに上記のsecuremodelinesスクリプトを使うとよい。
+" Modelines have historically been a source of security vulnerabilities.  As such, it may be a good idea to disable them and use the securemodelines script, <http://www.vim.org/scripts/script.php?script_id=1876>.
 " set nomodeline
-
 "------------------------------------------------------------
-" Usability options {{{1
-"
-" These are options that users frequently set in their .vimrc. Some of them
-" change Vim's behaviour in ways which deviate from the true Vi way, but
-" which are considered to add usability. Which, if any, of these options to
-" use is very much a personal preference, but they are harmless.
-
-" Use case insensitive search, except when using capital letters
-" 検索時に大文字・小文字を区別しない。ただし、検索後に大文字小文字が
-" 混在しているときは区別する
 set ignorecase
 set smartcase
-
 " Allow backspacing over autoindent, line breaks and start of insert action
-" オートインデント、改行、インサートモード開始直後にバックスペースキーで
-" 削除できるようにする。
 set backspace=indent,eol,start
-
-" When opening a new line and no filetype-specific indenting is enabled, keep
-" the same indent as the line you're currently on. Useful for READMEs, etc.
-" オートインデント
 set autoindent
-
-" Stop certain movements from always going to the first character of a line.
-" While this behaviour deviates from that of Vi, it does what most users
-" coming from other editors would expect.
-" 移動コマンドを使ったとき、行頭に移動しない
+" Stop certain movements from always going to the first character of a line.  While this behaviour deviates from that of Vi, it does what most users coming from other editors would expect.
 set nostartofline
-
-" Display the cursor position on the last line of the screen or in the status
-" line of a window
-" 画面最下行にルーラーを表示する
+" Display the cursor position on the last line of the screen or in the status line of a window
 "set ruler
-
-" Instead of failing a command because of unsaved changes, instead raise a
-" dialogue asking if you wish to save changed files.
-" バッファが変更されているとき、コマンドをエラーにするのでなく、保存する
-" かどうか確認を求める
+" Instead of failing a command because of unsaved changes, instead raise a dialogue asking if you wish to save changed files.
 set confirm
-
-" Use visual bell instead of beeping when doing something wrong
-" ビープの代わりにビジュアルベル（画面フラッシュ）を使う
+" Disable visual bell and beep
 set visualbell
-
-" And reset the terminal code for the visual bell.  If visualbell is set, and
-" this line is also included, vim will neither flash nor beep.  If visualbell
-" is unset, this does nothing.
-" そしてビジュアルベルも無効化する
 set t_vb=
-
 " Enable use of the mouse for all modes
-" 全モードでマウスを有効化
 set mouse=a
-
-" Set the command window height to 2 lines, to avoid many cases of having to
-" "press <Enter> to continue"
-" コマンドラインの高さを2行に
+" Set the command window height to 2 lines, to avoid many cases of having to "press <Enter> to continue"
 set cmdheight=2
-
 " Display line numbers on the left
-" 行番号を表示
 set number
 " toggle number
 nnoremap <Leader>n :set invnumber<CR>
-
-
 " Quickly time out on keycodes, but never time out on mappings
-" キーコードはすぐにタイムアウト。マッピングはタイムアウトしない
 set notimeout ttimeout ttimeoutlen=200
-
 " Use <F11> to toggle between 'paste' and 'nopaste'
-" <F11>キーで'paste'と'nopaste'を切り替える
 set pastetoggle=<F12>
 
 " Attempt to determine the type of a file based on its name and possibly its
