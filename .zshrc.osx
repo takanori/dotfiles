@@ -27,32 +27,40 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
     # fi
 # }
 
-function tnlater() {
-	if which terminal-notifier > /dev/null 2>&1 ; then
-		local COMMAND_FINISH_TIME=`date +"%H:%M:%S"`
-		# terminal-notifier -message "${${(s: :)COMMAND}[1]} $COMMAND_START_TIME $COMMAND_FINISH_TIME";
-		terminal-notifier -message "$COMMAND $COMMAND_START_TIME $COMMAND_FINISH_TIME";
-	else
-		echo 'terminal-notifier is not installed'
-	fi
-}
+# function tnlater() {
+	# if which terminal-notifier > /dev/null 2>&1 ; then
+		# local COMMAND_FINISH_TIME=`date +"%H:%M:%S"`
+		# # terminal-notifier -message "${${(s: :)COMMAND}[1]} $COMMAND_START_TIME $COMMAND_FINISH_TIME";
+		# terminal-notifier -message "$COMMAND $COMMAND_START_TIME $COMMAND_FINISH_TIME";
+	# else
+		# echo 'terminal-notifier is not installed'
+	# fi
+# }
 
-local COMMAND="0"
-local COMMAND_START_TIME="0"
-preexec() {
-	if [ "${1}" != "tn" ] ; then
-		COMMAND="${1}"
-		if [ "`perl -e 'print($ARGV[0]=~/ssh|^vi/)' $COMMAND`" -ne 1 ] ; then
-			# COMMAND_START_TIME=`date +%s`
-			COMMAND_START_TIME=`date +"%H:%M:%S"`
-		fi
-	fi
-}
-precmd() {
-	COMMAND="0"
-	COMMAND_START_TIME="0"
-}
+# local COMMAND="0"
+# local COMMAND_START_TIME="0"
+# preexec() {
+	# if [ "${1}" != "tn" ] ; then
+		# COMMAND="${1}"
+		# if [ "`perl -e 'print($ARGV[0]=~/ssh|^vi/)' $COMMAND`" -ne 1 ] ; then
+			# # COMMAND_START_TIME=`date +%s`
+			# COMMAND_START_TIME=`date +"%H:%M:%S"`
+		# fi
+	# fi
+# }
+# precmd() {
+	# COMMAND="0"
+	# COMMAND_START_TIME="0"
+# }
 
+# function call_alert {
+	# echo "Finish! This will call alert popup."
+# }
+
+# # bypass growl
+# function growl() {
+      # terminal-notifier -activate com.googlecode.iterm2 -title "growl_bypass"  -message "$@"
+ # }
 
 # vim
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
