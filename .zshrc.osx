@@ -5,26 +5,54 @@ export PATH=/usr/bin:/usr/sbin:/sbin:/usr/X11/bin:~/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # terminal-notifier
-local COMMAND=""
-local COMMAND_TIME=""
+## auto-notification
+# local COMMAND=""
+# local COMMAND_TIME=""
+# precmd() {
+    # if [ "$COMMAND_TIME" -ne "0" ] ; then
+        # local d=`date +%s`
+        # d=`expr $d - $COMMAND_TIME`
+        # if [ "$d" -ge "30" ] ; then
+            # COMMAND="$COMMAND "
+            # which terminal-notifier > /dev/null 2>&1 && terminal-notifier -message "${${(s: :)COMMAND}[1]}" -m "$COMMAND";
+        # fi
+    # fi
+    # COMMAND="0"
+    # COMMAND_TIME="0"
+# }
+# preexec () {
+    # COMMAND="${1}"
+    # if [ "`perl -e 'print($ARGV[0]=~/ssh|^vi/)' $COMMAND`" -ne 1 ] ; then
+        # COMMAND_TIME=`date +%s`
+    # fi
+# }
+
+function tnlater() {
+	if which terminal-notifier > /dev/null 2>&1 ; then
+		local COMMAND_FINISH_TIME=`date +"%H:%M:%S"`
+		# terminal-notifier -message "${${(s: :)COMMAND}[1]} $COMMAND_START_TIME $COMMAND_FINISH_TIME";
+		terminal-notifier -message "$COMMAND $COMMAND_START_TIME $COMMAND_FINISH_TIME";
+	else
+		echo 'terminal-notifier is not installed'
+	fi
+}
+
+local COMMAND="0"
+local COMMAND_START_TIME="0"
+preexec() {
+	if [ "${1}" != "tn" ] ; then
+		COMMAND="${1}"
+		if [ "`perl -e 'print($ARGV[0]=~/ssh|^vi/)' $COMMAND`" -ne 1 ] ; then
+			# COMMAND_START_TIME=`date +%s`
+			COMMAND_START_TIME=`date +"%H:%M:%S"`
+		fi
+	fi
+}
 precmd() {
-    if [ "$COMMAND_TIME" -ne "0" ] ; then
-        local d=`date +%s`
-        d=`expr $d - $COMMAND_TIME`
-        if [ "$d" -ge "30" ] ; then
-            COMMAND="$COMMAND "
-            which terminal-notifier > /dev/null 2>&1 && terminal-notifier -message "${${(s: :)COMMAND}[1]}" -m "$COMMAND";
-        fi
-    fi
-    COMMAND="0"
-    COMMAND_TIME="0"
+	COMMAND="0"
+	COMMAND_START_TIME="0"
 }
-preexec () {
-    COMMAND="${1}"
-    if [ "`perl -e 'print($ARGV[0]=~/ssh|^vi/)' $COMMAND`" -ne 1 ] ; then
-        COMMAND_TIME=`date +%s`
-    fi
-}
+
 
 # vim
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
