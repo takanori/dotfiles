@@ -59,7 +59,7 @@ autoload -U add-zsh-hook 2>/dev/null || return
 #  * Parameters: \1
 #
 
-__timetrack_threshold=4	 # seconds
+__timetrack_threshold=20  # seconds
 read -r -d '' __timetrack_ignore_progs <<EOF
 less
 emacs vi vim tig
