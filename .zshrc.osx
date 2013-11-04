@@ -4,27 +4,29 @@ alias ls="gls --color=auto"
 export PATH=/usr/bin:/usr/sbin:/sbin:/usr/X11/bin:~/bin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-# terminal-notifier
-## auto-notification
+
+# # terminal-notifier
+# # auto-notification
 # local COMMAND=""
 # local COMMAND_TIME=""
 # precmd() {
-    # if [ "$COMMAND_TIME" -ne "0" ] ; then
-        # local d=`date +%s`
-        # d=`expr $d - $COMMAND_TIME`
-        # if [ "$d" -ge "30" ] ; then
-            # COMMAND="$COMMAND "
-            # which terminal-notifier > /dev/null 2>&1 && terminal-notifier -message "${${(s: :)COMMAND}[1]}" -m "$COMMAND";
-        # fi
-    # fi
-    # COMMAND="0"
-    # COMMAND_TIME="0"
+	# if [ "$COMMAND_TIME" -ne "0" ] ; then
+		# local d=`date +%s`
+		# d=`expr $d - $COMMAND_TIME`
+		# if [ "$d" -ge "30" ] ; then
+			# COMMAND="$COMMAND "
+			# which terminal-notifier > /dev/null 2>&1 && echo "$d" | mail -s "$COMMAND" uzutaka.notification@gmail.com && echo "Notification mail sent."
+			# # which terminal-notifier > /dev/null 2>&1 && terminal-notifier -message "${${(s: :)COMMAND}[1]}" -m "$COMMAND";
+		# fi
+	# fi
+	# COMMAND="0"
+	# COMMAND_TIME="0"
 # }
 # preexec () {
-    # COMMAND="${1}"
-    # if [ "`perl -e 'print($ARGV[0]=~/ssh|^vi/)' $COMMAND`" -ne 1 ] ; then
-        # COMMAND_TIME=`date +%s`
-    # fi
+	# COMMAND="${1}"
+	# if [ "`perl -e 'print($ARGV[0]=~/ssh|^vi/)' $COMMAND`" -ne 1 ] ; then
+		# COMMAND_TIME=`date +%s`
+	# fi
 # }
 
 # function tnlater() {
