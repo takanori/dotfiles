@@ -490,8 +490,8 @@ command! -nargs=0 KobitoFocus call system("osascript -e 'tell application \"Kobi
 
 
 " perl tidy ================================================
-nnoremap ,pt <Esc>:%! perltidy<CR>
-vnoremap ,pt <Esc>:'<,'>! perltidy<CR>
+nnoremap <Leader>pt <Esc>:%! perltidy<CR>
+vnoremap <Leader>pt <Esc>:'<,'>! perltidy<CR>
 
 
 
