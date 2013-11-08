@@ -37,9 +37,6 @@ export LS_COLORS='no=00:fi=00:di=34:ow=34;40:ln=35:pi=30;44:so=35;44:do=35;44:bd
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 
-
-autoload -U add-zsh-hook 2>/dev/null || return
-
 #
 # Notification of local host command
 # ----------------------------------
@@ -58,6 +55,7 @@ autoload -U add-zsh-hook 2>/dev/null || return
 #  * Trigger regex: ==ZSH LONGRUN COMMAND TRACKER==(.*)
 #  * Parameters: \1
 #
+autoload -U add-zsh-hook 2>/dev/null || return
 
 __timetrack_threshold=20  # seconds
 read -r -d '' __timetrack_ignore_progs <<EOF
@@ -141,7 +139,15 @@ if which growlnotify >/dev/null 2>&1 ||
 fi
 
 
-
+## Command line stack
+show_buffer_stack() {
+  POSTDISPLAY="
+stack: $LBUFFER"
+  zle push-line-or-edit
+}
+zle -N show_buffer_stack
+setopt noflowcontrol
+bindkey '^Q' show_buffer_stack
 
 
 ## alias設定
