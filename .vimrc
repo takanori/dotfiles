@@ -580,8 +580,12 @@ autocmd QuickFixCmdPost *grep* cwindow
 " nerdcommenter settings ===================================
 let g:NERDCreateDefaultMappings = 0
 let g:NERDSpaceDelims = 1
-nmap <C-C> <Plug>NERDCommenterToggle
-vmap <C-C> <Plug>NERDCommenterToggle
+" nmap <C-C> <Plug>NERDCommenterToggle
+" vmap <C-C> <Plug>NERDCommenterToggle
+nmap <C-C> <Plug>NERDCommenterAlignLeft
+nmap <C-X> <Plug>NERDCommenterUncomment
+vmap <C-C> <Plug>NERDCommenterAlignLeft
+vmap <C-X> <Plug>NERDCommenterUncomment
 
 
 " YankRing settings ========================================
