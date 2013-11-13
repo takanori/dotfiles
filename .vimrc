@@ -411,12 +411,11 @@ nnoremap <silent> <Leader>cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C
 nnoremap <silent> <Leader>a  :<C-u>UniteResume search-buffer<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
-" Shift_JISの問題を回避したものをinstallしたはずだが，上手く動かないのでgrepのままにしておく
-" if executable('ag')
-  " let g:unite_source_grep_command = 'ag'
-  " let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-  " let g:unite_source_grep_recursive_opt = ''
-" endif
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
 
 
 " ==========================================================
