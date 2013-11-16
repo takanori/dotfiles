@@ -103,4 +103,3 @@ export PATH=$MYSQL_HOME/bin:$PATH
 
 # node.js
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
-export PATH=/usr/local/share/npm/bin:$PATH
