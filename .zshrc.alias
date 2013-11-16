@@ -10,3 +10,7 @@ alias mv="mv -v"
 function vimman() {
 	vim -c 'Ref man '$1 -c 'winc j' -c 'q'
 }
+
+function cpanv() {
+	perl -M$1 -le "print \$$1::VERSION"
+}

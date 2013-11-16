@@ -57,7 +57,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 #
 autoload -U add-zsh-hook 2>/dev/null || return
 
-__timetrack_threshold=20  # seconds
+__timetrack_threshold=60  # seconds
 read -r -d '' __timetrack_ignore_progs <<EOF
 less tail man vimman
 vi vim emacs
