@@ -385,6 +385,7 @@ endif
 let g:unite_winwidth = 40
 nnoremap <Leader>u :Unite 
 nnoremap <Leader>f :Unite file_rec<CR>
+autocmd FileType unite call unite#custom#default_action('directory', 'vimfiler')
 
 " let g:unite_enable_start_insert = 1
 " 大文字小文字を区別しない
@@ -393,11 +394,6 @@ let g:unite_enable_smart_case = 1
 
 " unite-outline  ===========================================
 " nnoremap <silent> <Leader>o :<C-u>Unite -vertical -no-quit outline<CR>
-
-
-" unite-bookmark settings ======================================
-autocmd FileType unite call unite#custom#default_action('directory', 'vimfiler')
-
 
 " unite-grep settings ======================================
 
@@ -450,13 +446,12 @@ set shiftwidth=4
 set tabstop=4
 
 " filetypeごとのタブ幅やラッピングの指定
-autocmd FileType javascript   set nowrap tabstop=2 shiftwidth=2
-autocmd FileType html         set nowrap tabstop=2 shiftwidth=2
-autocmd FileType tt2html      set nowrap tabstop=2 shiftwidth=2
-
 autocmd FileType ruby         set nowrap tabstop=4 shiftwidth=4
 
+autocmd FileType javascript   set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType perl         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType html         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType tt2html      set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
 " delimiteMate settings ======================================
 let g:delimitMate_matchpairs = "(:),[:],{:}"
