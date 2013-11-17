@@ -421,14 +421,14 @@ endif
 
 " syntastic settings =======================================
 augroup filetypedetectgroup
-	autocmd BufNewFile,BufRead *.tx      setfiletype html 
-	autocmd BufNewFile,BufRead *.tt      setfiletype html 
-	" autocmd BufNewFile,BufRead *.tx      setfiletype xslt
-	" autocmd BufNewFile,BufRead *.tt      setfiletype tt2html
+	autocmd BufNewFile,BufRead *.tx      set filetype=html 
+	autocmd BufNewFile,BufRead *.tt      set filetype=html 
+	" autocmd BufNewFile,BufRead *.tx      set filetype=xslt
+	" autocmd BufNewFile,BufRead *.tt      set filetype=tt2html
 	"" Changing filetype to tt2html will stop autoindent and completion
-	autocmd BufNewFile,BufRead *.psgi    setfiletype perl
-	autocmd BufNewFile,BufRead cpanfile  setfiletype perl
-	autocmd BufNewFile,BufRead *.t       setfiletype perl
+	autocmd BufNewFile,BufRead *.psgi    set filetype=perl
+	autocmd BufNewFile,BufRead cpanfile  set filetype=perl
+	autocmd BufNewFile,BufRead *.t       set filetype=perl
 augroup END
 
 let g:syntastic_filetype_map = { 'tt2html':    'html',
