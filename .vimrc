@@ -162,6 +162,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'Raimondi/delimitMate' " delimitMate breaks the redo features
 NeoBundle 'YankRing.vim'
+NeoBundle 'osyo-manga/vim-over'
 
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
@@ -586,6 +587,10 @@ vmap <C-X> <Plug>NERDCommenterUncomment
 nnoremap <silent> <leader>y :YRShow<CR>
 let g:yankring_window_height = 20 
 
+
+" vim-over settings ========================================
+nnoremap <silent> <Leader>o :OverCommandLine<CR>
+vnoremap <silent> <Leader>o :OverCommandLine<CR>
 
 " perl-local-lib-path settings ===================================
 " g:perl_local_lib_path = "vendor/lib"
