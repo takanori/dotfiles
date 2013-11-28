@@ -18,6 +18,10 @@ eval "$(pyenv init -)"
 # node.js
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
+# Luajit
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+export LD_LIBRARY_PATH
+
 # # terminal-notifier
 # # auto-notification
 # local COMMAND=""
