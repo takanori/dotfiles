@@ -83,6 +83,7 @@ map  <C-b> :tabprevious<CR>
 "map  :e :tabnew
 
 
+
 "=============================================================
 "=============================================================
 "=============================================================
@@ -427,6 +428,16 @@ if executable('ag')
 endif
 
 
+" vim-fugitive settings ====================================
+nnoremap <silent> <Leader>vs :<C-u>Gstatus<CR>
+nnoremap <silent> <Leader>vr :<C-u>Gread<CR>
+nnoremap <silent> <Leader>vw :<C-u>Gwrite<CR>
+nnoremap <silent> <Leader>vc :<C-u>Gcommit<CR>
+nnoremap <silent> <Leader>vd :<C-u>Gdiff<CR>
+nnoremap <silent> <Leader>2 :<C-u>diffget //2<CR>
+nnoremap <silent> <Leader>3 :<C-u>diffget //3<CR>
+
+
 " ==========================================================
 " ==========================================================
 " ==========================================================
@@ -458,6 +469,7 @@ let g:syntastic_filetype_map = { 'tt2html':    'html',
 set shiftwidth=4
 set tabstop=4
 
+
 " filetypeごとのタブ幅やラッピングの指定
 autocmd FileType ruby         set nowrap tabstop=4 shiftwidth=4
 
@@ -465,6 +477,7 @@ autocmd FileType javascript   set nowrap tabstop=4 shiftwidth=4 softtabstop=4 ex
 autocmd FileType perl         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType html         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType tt2html      set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
 
 " delimiteMate settings ======================================
 let g:delimitMate_matchpairs = "(:),[:],{:}"
@@ -491,9 +504,6 @@ command! -nargs=0 KobitoClose call system("osascript -e 'tell application \"Kobi
 " Kobito にフォーカスを移す
 command! -nargs=0 KobitoFocus call system("osascript -e 'tell application \"Kobito\" to activate'")
 
-
-" " textile settings ========================================
-" let g:TextileBrowser="Google Chrome"
 
 
 " ==========================================================
@@ -533,10 +543,12 @@ let g:vimfiler_safe_mode_by_default = 0
 let g:vimfiler_as_default_explorer = 1
 " let g:vimfiler_split_rule = "belowright"
 
+
 " tagbar settings ========================================
 set tags=tags,~/perl5/perlbrew/perls/perl-5.18.1/lib/tags
 let g:tagbar_autoclose = 1
 nnoremap <silent> <Leader>b :TagbarToggle<CR> " 'b'ar
+
 
 " quickrun settings ========================================
 nmap <Leader>r <plug>(quickrun)
@@ -547,6 +559,7 @@ let g:quickrun_config = {
 	\	"outputter" : "buffer",
 	\ },
 	\}
+
 
 " SrcExpl settings =========================================
 " // The switch of the Source Explorer 
