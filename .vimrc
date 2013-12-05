@@ -82,6 +82,32 @@ map  <C-b> :tabprevious<CR>
 "imap :e <ESC>:tabnew
 "map  :e :tabnew
 
+
+" diffconflicts settings ====================================
+" Disable one diff window during a three-way diff allowing you to cut out the
+" noise of a three-way diff and focus on just the changes between two versions
+" at a time. Inspired by Steve Losh's Splice
+function! DiffToggle(window)
+  " Save the cursor position and turn on diff for all windows
+  let l:save_cursor = getpos('.')
+  windo :diffthis
+  " Turn off diff for the specified window (but keep scrollbind) and move
+  " the cursor to the left-most diff window
+  exe a:window . "wincmd w"
+  diffoff
+  set scrollbind
+  set cursorbind
+  exe a:window . "wincmd " . (a:window == 1 ? "l" : "h")
+  " Update the diff and restore the cursor position
+  diffupdate
+  call setpos('.', l:save_cursor)
+endfunction
+" Toggle diff view on the left, center, or right windows
+" nmap <silent> <leader>dl :call DiffToggle(1)<cr>
+" nmap <silent> <leader>dc :call DiffToggle(2)<cr>
+" nmap <silent> <leader>dr :call DiffToggle(3)<cr>
+
+
 "=============================================================
 "=============================================================
 "=============================================================
@@ -130,7 +156,6 @@ NeoBundle 'tsukkee/unite-help'
 " NeoBundle 'h1mesuke/unite-outline'
 
 " syntax
-NeoBundle 'Align'
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'thinca/vim-localrc'
 NeoBundle 'hail2u/vim-css3-syntax'
@@ -139,10 +164,14 @@ NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'mojo.vim'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'SQLUtilities'
 " NeoBundle 'timcharper/textile.vim'
 " Omni
 NeoBundle 'c9s/perlomni.vim'
+
+" Formatter
+NeoBundle 'Align'
+NeoBundle 'SQLUtilities'
+NeoBundle 'maksimr/vim-jsbeautify'
 
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'hotchpotch/perldoc-vim'
@@ -490,13 +519,27 @@ command! -nargs=0 KobitoFocus call system("osascript -e 'tell application \"Kobi
 " let g:TextileBrowser="Google Chrome"
 
 
+" ==========================================================
+" Formatter settings
+" ==========================================================
+
+
 " perl tidy ================================================
-nnoremap <Leader>pt <Esc>:%! perltidy<CR>
-vnoremap <Leader>pt <Esc>:'<,'>! perltidy<CR>
+nnoremap <Leader>fp <Esc>:%! perltidy<CR>
+vnoremap <Leader>fp <Esc>:'<,'>! perltidy<CR>
 
 
+" JsBeautify settings  =====================================
+autocmd FileType javascript noremap <Leader>fj :call JsBeautify()<cr>
+autocmd FileType html       noremap <Leader>fh :call HtmlBeautify()<cr>
+autocmd FileType css        noremap <Leader>fc :call CSSBeautify()<cr>
 
-" " vimshell settings ========================================
+
+" SQLUtilities settings  ===================================
+noremap <Leader>fs :SQLUFormatter<cr>
+
+
+" " vimshell settings ======================================
 " nnoremap <silent> vs :VimShell<CR>
 " nnoremap <silent> vp :VimShellPop<CR>
 " nnoremap <silent> vt :VimShellTab<CR>
