@@ -130,6 +130,7 @@ NeoBundle 'tsukkee/unite-help'
 " NeoBundle 'h1mesuke/unite-outline'
 
 " syntax
+NeoBundle 'Align'
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'thinca/vim-localrc'
 NeoBundle 'hail2u/vim-css3-syntax'
@@ -138,6 +139,7 @@ NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'mojo.vim'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'SQLUtilities'
 " NeoBundle 'timcharper/textile.vim'
 " Omni
 NeoBundle 'c9s/perlomni.vim'
@@ -388,8 +390,8 @@ endif
 " Unite ====================================================
 " ==========================================================
 let g:unite_winwidth = 40
-nnoremap <Leader>u :Unite 
-nnoremap <Leader>f :Unite file_rec<CR>
+nnoremap <Leader>uu :Unite 
+nnoremap <Leader>uf :Unite file_rec<CR>
 autocmd FileType unite call unite#custom#default_action('directory', 'vimfiler')
 
 " let g:unite_enable_start_insert = 1
@@ -403,13 +405,13 @@ let g:unite_enable_smart_case = 1
 " unite-grep settings ======================================
 
 " grep検索
-nnoremap <silent> <Leader>g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> <Leader>gg  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 
 " カーソル位置の単語をgrep検索
-nnoremap <silent> <Leader>cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
+nnoremap <silent> <Leader>gw :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
 
 " grep検索結果の再呼出
-nnoremap <silent> <Leader>a  :<C-u>UniteResume search-buffer<CR>
+nnoremap <silent> <Leader>ga  :<C-u>UniteResume search-buffer<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
 if executable('ag')
@@ -514,8 +516,7 @@ let g:vimfiler_as_default_explorer = 1
 " tagbar settings ========================================
 set tags=tags,~/perl5/perlbrew/perls/perl-5.18.1/lib/tags
 let g:tagbar_autoclose = 1
-" nnoremap <silent> <F9> :TagbarToggle<CR>
-nnoremap <silent> <Leader>t :TagbarToggle<CR>
+nnoremap <silent> <Leader>b :TagbarToggle<CR> " 'b'ar
 
 " quickrun settings ========================================
 nmap <Leader>r <plug>(quickrun)
@@ -529,7 +530,7 @@ let g:quickrun_config = {
 
 " SrcExpl settings =========================================
 " // The switch of the Source Explorer 
-nmap <Leader>s :SrcExplToggle<CR> 
+nmap <Leader>e :SrcExplToggle<CR> 
 " nmap <F8> :SrcExplToggle<CR> 
 
 " // Set the height of Source Explorer window 
