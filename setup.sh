@@ -15,19 +15,8 @@ fi
 [ ! -d ~/.oh-my-zsh ] && curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
 rm -f ~/.zshrc
 
-# diffconflicts for vimdiff
-if [ ! -d ~/bin ] ; then
-	mkdir ~/bin
-else 
-	echo '~/bin already exists.'
-fi
-ln -s ~/dotfiles/diffconflicts ~/bin/diffconflicts
 
 # git settings
-git config --global merge.tool diffconflicts
-git config --global mergetool.diffconflicts.cmd 'diffconflicts vim $BASE $LOCAL $REMOTE $MERGED'
-git config --global mergetool.diffconflicts.trustExitCode true
-git config --global mergetool.diffconflicts.keepBackup false
 git config --global color.ui true
 git config --global mergetool.keepBackup true
 echo -e '\n#### Setup git account name and email by yourself ####'
