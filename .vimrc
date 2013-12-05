@@ -434,8 +434,9 @@ nnoremap <silent> <Leader>vr :<C-u>Gread<CR>
 nnoremap <silent> <Leader>vw :<C-u>Gwrite<CR>
 nnoremap <silent> <Leader>vc :<C-u>Gcommit<CR>
 nnoremap <silent> <Leader>vd :<C-u>Gdiff<CR>
-nnoremap <silent> <Leader>2 :<C-u>diffget //2<CR>
-nnoremap <silent> <Leader>3 :<C-u>diffget //3<CR>
+nnoremap <silent> <Leader>vu :<C-u>diffupdate<CR>
+nnoremap <silent> <Leader>2 :<C-u>diffget //2 \| diffupdate<CR>
+nnoremap <silent> <Leader>3 :<C-u>diffget //3 \| diffupdate<CR>
 
 
 " ==========================================================
