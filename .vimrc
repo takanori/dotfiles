@@ -402,6 +402,9 @@ endif
 let g:unite_winwidth = 40
 nnoremap <Leader>uu :Unite 
 nnoremap <Leader>uf :Unite file_rec<CR>
+nnoremap <Leader>ub :Unite buffer_tab<CR>
+nnoremap <Leader>um :Unite bookmark<CR>
+nnoremap <Leader>ur :Unite file_mru<CR>
 autocmd FileType unite call unite#custom#default_action('directory', 'vimfiler')
 
 " let g:unite_enable_start_insert = 1
