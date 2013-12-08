@@ -8,6 +8,9 @@ set clipboard+=unnamed
 set backup
 set backupdir=$HOME/vimbackup
 
+set foldmethod=syntax
+set foldlevel=20
+
 let OSTYPE = system('uname')
 if OSTYPE == "Darwin\n"
 	augroup crontab
@@ -406,8 +409,8 @@ autocmd FileType unite call unite#custom#default_action('directory', 'vimfiler')
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
 
-" unite-outline  ===========================================
-" nnoremap <silent> <Leader>o :<C-u>Unite -vertical -no-quit outline<CR>
+
+
 
 " unite-grep settings ======================================
 
@@ -428,6 +431,11 @@ if executable('ag')
 endif
 
 
+" ==========================================================
+" ==========================================================
+" ==========================================================
+
+
 " vim-fugitive settings ====================================
 nnoremap <silent> <Leader>vs :<C-u>Gstatus<CR>
 nnoremap <silent> <Leader>vr :<C-u>Gread<CR>
@@ -438,11 +446,6 @@ nnoremap <silent> <Leader>vu :<C-u>diffupdate<CR>
 nnoremap <silent> <Leader>2 :<C-u>diffget //2 \| diffupdate<CR>
 nnoremap <silent> <Leader>3 :<C-u>diffget //3 \| diffupdate<CR>
 
-
-" ==========================================================
-" ==========================================================
-" ==========================================================
-"
 
 " syntastic settings =======================================
 augroup filetypedetectgroup
