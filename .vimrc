@@ -484,7 +484,7 @@ autocmd FileType javascript   set nowrap tabstop=4 shiftwidth=4 softtabstop=4 ex
 autocmd FileType perl         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType html         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType tt2html      set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-
+autocmd FileType sql          set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
 " delimiteMate settings ======================================
 let g:delimitMate_matchpairs = "(:),[:],{:}"
@@ -516,6 +516,9 @@ command! -nargs=0 KobitoFocus call system("osascript -e 'tell application \"Kobi
 " ==========================================================
 " Formatter settings
 " ==========================================================
+
+" Align.vim  ===============================================
+let g:Align_xstrlen=3
 
 
 " perl tidy ================================================
