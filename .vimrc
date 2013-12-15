@@ -482,9 +482,9 @@ autocmd FileType ruby         set nowrap tabstop=4 shiftwidth=4
 
 autocmd FileType javascript   set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType perl         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType html         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType tt2html      set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType sql          set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType html         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType tt2html      set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType sql          set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 " delimiteMate settings ======================================
 let g:delimitMate_matchpairs = "(:),[:],{:}"
