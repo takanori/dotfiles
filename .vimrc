@@ -815,3 +815,7 @@ map Y y$
 nnoremap <C-K> :nohl<CR><C-L>
 
 set cindent
+
+" Disable auto newline
+set textwidth=0
+autocmd FileType text setlocal textwidth=0
