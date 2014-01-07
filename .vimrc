@@ -487,8 +487,8 @@ endif
 
 " vim-fugitive settings ====================================
 nnoremap <silent> <Leader>vs :<C-u>Gstatus<CR>
-nnoremap <silent> <Leader>vr :<C-u>Gread<CR>
-nnoremap <silent> <Leader>vw :<C-u>Gwrite<CR>
+" nnoremap <silent> <Leader>vr :<C-u>Gread<CR>
+" nnoremap <silent> <Leader>vw :<C-u>Gwrite<CR>
 nnoremap <silent> <Leader>vc :<C-u>Gcommit<CR>
 nnoremap <silent> <Leader>vd :<C-u>Gdiff<CR>
 nnoremap <silent> <Leader>vu :<C-u>diffupdate<CR>
@@ -695,11 +695,12 @@ if isdirectory(s:local_session_directory)
   " session保存ディレクトリをそのディレクトリの設定
   let g:session_directory = s:local_session_directory
   " vimを辞める時に自動保存
-  let g:session_autosave = 'yes'
+  " let g:session_autosave = 'yes'
+  let g:session_autosave = 'no'
   " 引数なしでvimを起動した時にsession保存ディレクトリのdefault.vimを開く
   let g:session_autoload = 'yes'
   " 1分間に1回自動保存
-  let g:session_autosave_periodic = 1
+  " let g:session_autosave_periodic = 1
 else
   let g:session_autosave = 'no'
   let g:session_autoload = 'no'
