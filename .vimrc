@@ -447,6 +447,7 @@ endif
 " ==========================================================
 let g:unite_winwidth = 40
 nnoremap <Leader>uu :Unite 
+nnoremap <Leader>ut :Unite tab<CR>
 nnoremap <Leader>uf :Unite file_rec<CR>
 nnoremap <Leader>ub :Unite buffer_tab<CR>
 nnoremap <Leader>um :Unite bookmark<CR>
