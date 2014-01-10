@@ -196,7 +196,7 @@ NeoBundle 'SQLUtilities'
 NeoBundle 'maksimr/vim-jsbeautify'
 
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-unimpaired'
+" NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'hotchpotch/perldoc-vim'
 NeoBundle 'thinca/vim-quickrun'
