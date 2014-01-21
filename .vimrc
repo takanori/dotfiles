@@ -175,7 +175,7 @@ NeoBundle 'Shougo/vimfiler.vim'
 " NeoBundle 'Shougo/vimshell'
 NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'tsukkee/unite-help'
-" NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'Shougo/unite-outline'
 
 " syntax
 NeoBundle 'scrooloose/syntastic.git'
@@ -446,12 +446,6 @@ endif
 " Unite ====================================================
 " ==========================================================
 let g:unite_winwidth = 40
-nnoremap <Leader>uu :Unite 
-nnoremap <Leader>ut :Unite tab<CR>
-nnoremap <Leader>uf :Unite file_rec<CR>
-nnoremap <Leader>ub :Unite buffer_tab<CR>
-nnoremap <Leader>um :Unite bookmark<CR>
-nnoremap <Leader>ur :Unite file_mru<CR>
 autocmd FileType unite call unite#custom#default_action('directory', 'vimfiler')
 
 " let g:unite_enable_start_insert = 1
@@ -459,8 +453,13 @@ autocmd FileType unite call unite#custom#default_action('directory', 'vimfiler')
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
 
-
-
+nnoremap <silent> <Leader>uu :Unite 
+nnoremap <silent> <Leader>ut :Unite tab<CR>
+nnoremap <silent> <Leader>uf :Unite file_rec<CR>
+nnoremap <silent> <Leader>ub :Unite buffer_tab<CR>
+nnoremap <silent> <Leader>um :Unite bookmark<CR>
+nnoremap <silent> <Leader>ur :Unite file_mru<CR>
+nnoremap <silent> <Leader>uo :Unite -vertical outline<CR>
 
 " unite-grep settings ======================================
 
