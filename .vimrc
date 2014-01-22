@@ -708,6 +708,10 @@ endif
 unlet s:local_session_directory
 
 " vim-latex settings =================================== {{{
+" let g:tex_fold_enabled=0
+let g:tex_fast= "bcprsSvV"
+" let g:tex_fast= "m"
+
 filetype plugin on
 filetype indent on
 set shellslash
