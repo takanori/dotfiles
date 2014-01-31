@@ -453,7 +453,7 @@ autocmd FileType unite call unite#custom#default_action('directory', 'vimfiler')
 let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
 
-nnoremap <silent> <Leader>uu :Unite 
+nnoremap <Leader>uu :Unite 
 nnoremap <silent> <Leader>ut :Unite tab<CR>
 nnoremap <silent> <Leader>uf :Unite file_rec<CR>
 nnoremap <silent> <Leader>ub :Unite buffer_tab<CR>
@@ -709,7 +709,8 @@ unlet s:local_session_directory
 
 " vim-latex settings =================================== {{{
 " let g:tex_fold_enabled=0
-let g:tex_fast= "bcprsSvV"
+let g:tex_fast= ""
+" let g:tex_fast= "bcprsSvV"
 " let g:tex_fast= "m"
 
 filetype plugin on
@@ -786,6 +787,11 @@ endfunction
 " nmap <Leader>dj :<C-u>Ref webdict je<Space>
 " nmap <Leader>de :<C-u>Ref webdict ej<Space>
 nmap <Leader>d :<C-u>Ref webdict ej<Space>
+
+
+" vim-browsereload-mac settings =================================
+let g:returnApp = "iTerm"
+
 
 
 " mark settings ==================================================
