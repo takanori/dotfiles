@@ -11,6 +11,10 @@ set backupdir=$HOME/vimbackup
 set foldmethod=syntax
 set foldlevel=20
 
+" disable increment and decrement
+nnoremap <C-A> <NOP>
+nnoremap <C-X> <NOP>
+
 let OSTYPE = system('uname')
 if OSTYPE == "Darwin\n"
 	augroup crontab
@@ -33,7 +37,7 @@ nnoremap <Up>   gk
 " horizontal scroll in nowrap mode
 nnoremap <C-L> 8zl
 nnoremap <C-H> 8zh
-
+ 
 " " swqp colon and semi colon
 " nnoremap ; :
 " nnoremap : ;
