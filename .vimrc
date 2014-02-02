@@ -173,7 +173,7 @@ else
 endif
 
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'honza/vim-snippets'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 " NeoBundle 'Shougo/vimshell'
