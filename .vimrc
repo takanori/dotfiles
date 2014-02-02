@@ -219,6 +219,9 @@ NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'tpope/vim-surround'
 " NeoBundle 'mattn/zencoding-vim' " Moved to emmet-vim
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-textobj-indent'
+NeoBundle 'saihoooooooo/vim-textobj-space'
 NeoBundle 'Raimondi/delimitMate' " delimitMate breaks the redo features
 NeoBundle 'YankRing.vim'
 NeoBundle 'osyo-manga/vim-over'
