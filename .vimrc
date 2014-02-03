@@ -202,7 +202,7 @@ NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'thinca/vim-ref'
-NeoBundle 'hotchpotch/perldoc-vim'
+" NeoBundle 'hotchpotch/perldoc-vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'sudo.vim'
 NeoBundle 'y-uuki/perl-local-lib-path.vim'
@@ -467,6 +467,8 @@ nnoremap <silent> <Leader>ub :Unite buffer_tab<CR>
 nnoremap <silent> <Leader>um :Unite bookmark<CR>
 nnoremap <silent> <Leader>ur :Unite file_mru<CR>
 nnoremap <silent> <Leader>uo :Unite -vertical outline<CR>
+nnoremap <silent> <Leader>dpm :Unite ref/perldoc<CR>
+nnoremap          <Leader>dpf :Ref perldoc -f 
 
 " unite-grep settings ======================================
 
@@ -769,6 +771,10 @@ let g:Tex_AutoFolding = 0
 autocmd FileType perl PerlLocalLibPath
 
 
+" vim-ref settings ===============================================
+let g:ref_open = 'tabnew'
+
+
 " vim-ref webdict settings =======================================
 "http://eow.alc.co.jp/search?q=preference
 let g:ref_source_webdict_sites = {
@@ -793,7 +799,8 @@ endfunction
  
 " nmap <Leader>dj :<C-u>Ref webdict je<Space>
 " nmap <Leader>de :<C-u>Ref webdict ej<Space>
-nmap <Leader>d :<C-u>Ref webdict ej<Space>
+" nmap <Leader>d :<C-u>Ref webdict ej<Space>
+nmap <Leader>dd :<C-u>Ref webdict ej<Space>
 
 
 " vim-browsereload-mac settings =================================
