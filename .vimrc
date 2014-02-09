@@ -202,6 +202,7 @@ NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'thinca/vim-ref'
+NeoBundle 'mojako/ref-sources.vim'
 " NeoBundle 'hotchpotch/perldoc-vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'sudo.vim'
@@ -462,14 +463,16 @@ let g:unite_enable_ignore_case = 1
 let g:unite_enable_smart_case = 1
 
 nnoremap <Leader>uu :Unite 
-nnoremap <silent> <Leader>ut :Unite tab<CR>
-nnoremap <silent> <Leader>uf :Unite file_rec<CR>
-nnoremap <silent> <Leader>ub :Unite buffer_tab<CR>
-nnoremap <silent> <Leader>um :Unite bookmark<CR>
-nnoremap <silent> <Leader>ur :Unite file_mru<CR>
-nnoremap <silent> <Leader>uo :Unite -vertical outline<CR>
-nnoremap <silent> <Leader>dpm :Unite ref/perldoc -default-action=tabopen<CR>
-nnoremap          <Leader>dpf :Ref perldoc -f 
+nnoremap <silent> <Leader>ut  :<C-u>Unite tab<CR>
+nnoremap <silent> <Leader>uf  :<C-u>Unite file_rec<CR>
+nnoremap <silent> <Leader>ub  :<C-u>Unite buffer_tab<CR>
+nnoremap <silent> <Leader>um  :<C-u>Unite bookmark<CR>
+nnoremap <silent> <Leader>ur  :<C-u>Unite file_mru<CR>
+nnoremap <silent> <Leader>uo  :<C-u>Unite -vertical outline<CR>
+nnoremap <silent> <Leader>dpm :<C-u>Unite ref/perldoc -default-action=tabopen<CR>
+nnoremap          <Leader>dpf :<C-u>Ref perldoc -f<Space>
+nnoremap          <Leader>dpc :<C-u>Ref cpan<Space>
+nnoremap          <Leader>dd  :<C-u>Ref webdict ej<Space>
 
 " unite-grep settings ======================================
 
@@ -797,12 +800,6 @@ endfunction
 function! g:ref_source_webdict_sites.ej.filter(output)
   return join(split(a:output, "\n")[38 :], "\n")
 endfunction
- 
-" nmap <Leader>dj :<C-u>Ref webdict je<Space>
-" nmap <Leader>de :<C-u>Ref webdict ej<Space>
-" nmap <Leader>d :<C-u>Ref webdict ej<Space>
-nmap <Leader>dd :<C-u>Ref webdict ej<Space>
-
 
 " vim-browsereload-mac settings =================================
 let g:returnApp = "iTerm"
