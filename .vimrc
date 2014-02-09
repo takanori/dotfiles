@@ -453,6 +453,7 @@ endif
 " Unite ====================================================
 " ==========================================================
 let g:unite_winwidth = 40
+call unite#custom#default_action('directory', 'vimfiler')
 autocmd FileType unite call unite#custom#default_action('directory', 'vimfiler')
 
 " let g:unite_enable_start_insert = 1
@@ -467,7 +468,7 @@ nnoremap <silent> <Leader>ub :Unite buffer_tab<CR>
 nnoremap <silent> <Leader>um :Unite bookmark<CR>
 nnoremap <silent> <Leader>ur :Unite file_mru<CR>
 nnoremap <silent> <Leader>uo :Unite -vertical outline<CR>
-nnoremap <silent> <Leader>dpm :Unite ref/perldoc<CR>
+nnoremap <silent> <Leader>dpm :Unite ref/perldoc -default-action=tabopen<CR>
 nnoremap          <Leader>dpf :Ref perldoc -f 
 
 " unite-grep settings ======================================

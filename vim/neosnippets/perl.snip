@@ -4,6 +4,16 @@ snippet u
     use strict;
     use warnings;
 
+snippet tran
+    eval {
+        ${0}
+        $self->dbh->commit;
+    };
+    if ($@) {
+        critf("Transaction aborted: $@");
+        $self->dbh->rollback;
+    }
+
 snippet sub;
 	sub {
 		${0}
