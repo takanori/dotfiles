@@ -665,7 +665,7 @@ let g:SrcExpl_isUpdateTags = 0
 
 " // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to 
 " // create/update the tags file 
-let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
+let g:SrcExpl_updateTagsCmd = "`brew --prefix`/bin/ctags --sort=foldcase -R ." 
 
 " // Set "<F5>" key for updating the tags file artificially 
 let g:SrcExpl_updateTagsKey = "<F5>" 
