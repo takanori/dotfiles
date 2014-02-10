@@ -8,7 +8,7 @@ alias mv="mv -v"
 
 alias pmversion='perl -le '"'"'for $module (@ARGV) { eval "use $module"; print "$module ", ${"$module\::VERSION"} || "not found" }'"'"
 
-alias pmcpanfile='perl -le '"'"'for $module (@ARGV) { eval "use $module"; print "requires \"$module\", \"", ${"$module\::VERSION"} || "not found" , "\""}'"'"
+alias pmcpanfile='perl -le '"'"'for $module (@ARGV) { eval "use $module"; print "requires \"$module\", \"", ${"$module\::VERSION"} || "not found" , "\";"}'"'"
 
 function vimman() {
 	vim -c 'Ref -open=split man '$1 -c 'winc j' -c 'q'
