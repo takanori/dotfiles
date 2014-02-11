@@ -805,6 +805,16 @@ endfunction
 let g:returnApp = "iTerm"
 
 
+" Checking typo. ================================================
+" http://d.hatena.ne.jp/tyru/20130419/avoid_tyop （partially amended）
+autocmd BufWriteCmd :*,*[,*] call s:write_check_typo(expand('<afile>'))
+function! s:write_check_typo(file)
+    let prompt = "possible typo: really want to write to '" . a:file . "'?(y/n):"
+    let input = input(prompt)
+    if input =~? '^y\(es\)\=$'
+        execute 'write'.(v:cmdbang ? '!' : '') a:file
+    endif
+endfunction
 
 " mark settings ==================================================
 " マーク設定 : {{{
