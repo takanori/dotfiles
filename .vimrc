@@ -208,6 +208,8 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'sudo.vim'
 NeoBundle 'y-uuki/perl-local-lib-path.vim'
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'sjl/gundo.vim'
 
 " NeoBundle 'wesleyche/Trinity'
 " NeoBundle 'scrooloose/nerdtree.git' "nerdtree is included in trinity
@@ -497,6 +499,9 @@ endif
 " ==========================================================
 " ==========================================================
 
+
+" gundo settings ===========================================
+nnoremap <silent> <Leader>gu :<C-u>GundoToggle<CR>
 
 " vim-fugitive settings ====================================
 nnoremap <silent> <Leader>vs :<C-u>Gstatus<CR>
