@@ -190,6 +190,7 @@ NeoBundle 'jelera/vim-javascript-syntax'
 NeoBundle 'mojo.vim'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'groenewege/vim-less'
 " NeoBundle 'timcharper/textile.vim'
 " Omni
 NeoBundle 'c9s/perlomni.vim'
