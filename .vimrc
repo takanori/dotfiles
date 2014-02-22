@@ -781,6 +781,33 @@ let g:Tex_AutoFolding = 0
 autocmd FileType perl PerlLocalLibPath
 
 
+" Dash.app settings ==============================================
+"" ファイルタイプを指定する場合
+" function! s:dash(...)
+"     if len(a:000) == 1 && len(a:1) == 0
+"         echomsg 'No keyword'
+"     else
+"         let ft = &filetype
+"         if &filetype == 'python'
+"             let ft = ft.'2'
+"         elseif  &filetype == 'javascript'
+"             let ft = 'js'
+"         endif
+"         let ft = ft.':'
+"         let word = len(a:000) == 0 ? input('Keyword: ', ft.expand('<cword>')) : ft.join(a:000, ' ')
+"         call system(printf("open dash://'%s'", word))
+"     endif
+" endfunction
+
+function! s:dash(...)
+  let word = len(a:000) == 0 ? input('Dash search: ') : a:1
+  call system(printf("open dash://'%s'", word))
+endfunction
+command! -nargs=? Dash call <SID>dash(<f-args>)
+
+nnoremap <Leader>da :call <SID>dash(expand('<cword>'))<CR>
+
+
 " vim-ref settings ===============================================
 let g:ref_open = 'tabnew'
 
