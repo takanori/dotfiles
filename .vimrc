@@ -194,6 +194,8 @@ NeoBundle 'marijnh/tern_for_vim', {
 " NeoBundle 'pangloss/vim-javascript'
 " NeoBundle 'mojo.vim'
 NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'tpope/vim-rails', { 'autoload' : {
+      \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'groenewege/vim-less'
 " NeoBundle 'timcharper/textile.vim'
@@ -217,6 +219,7 @@ NeoBundle 'y-uuki/perl-local-lib-path.vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'tpope/vim-endwise'
 
 " NeoBundle 'wesleyche/Trinity'
 " NeoBundle 'scrooloose/nerdtree.git' "nerdtree is included in trinity
