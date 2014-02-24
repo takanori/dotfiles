@@ -194,6 +194,7 @@ NeoBundle 'marijnh/tern_for_vim', {
 " NeoBundle 'pangloss/vim-javascript'
 " NeoBundle 'mojo.vim'
 NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails', { 'autoload' : {
       \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
 NeoBundle 'plasticboy/vim-markdown'
@@ -339,9 +340,10 @@ if s:meet_neocomplete_requirements()
 	if !exists('g:neocomplete#sources#omni#input_patterns')
 	  let g:neocomplete#sources#omni#input_patterns = {}
 	endif
-	"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-	"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-	"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+	let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+	let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+	let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+	let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 	" For perlomni.vim setting.
 	" https://github.com/c9s/perlomni.vim
@@ -556,13 +558,14 @@ set tabstop=4
 
 
 " filetypeごとのタブ幅やラッピングの指定
-autocmd FileType ruby         set nowrap tabstop=4 shiftwidth=4
 
 autocmd FileType javascript   set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType perl         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
 autocmd FileType html         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType tt2html      set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType sql          set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType ruby         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 " delimiteMate settings ======================================
 let g:delimitMate_matchpairs = "(:),[:],{:}"
