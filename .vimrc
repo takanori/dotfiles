@@ -538,6 +538,7 @@ augroup END
 
 let g:syntastic_filetype_map = { 'tt2html':    'html',
 							   \ 'tx':         'html'}
+let g:syntastic_ruby_checkers = ['rubocop']
 
 " tern_for_vim settings ===================================
 let g:tern_show_argument_hints=1
