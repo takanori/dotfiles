@@ -181,13 +181,18 @@ NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'tsukkee/unite-help'
 NeoBundle 'Shougo/unite-outline'
 
-" syntax
+" Syntax
+
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'thinca/vim-localrc'
 NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'mojo.vim'
+NeoBundle 'marijnh/tern_for_vim', {
+  \ 'build': {
+  \   'others': 'npm install'
+  \}}
+" NeoBundle 'pangloss/vim-javascript'
+" NeoBundle 'mojo.vim'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'groenewege/vim-less'
@@ -196,6 +201,7 @@ NeoBundle 'groenewege/vim-less'
 NeoBundle 'c9s/perlomni.vim'
 
 " Formatter
+
 NeoBundle 'Align'
 NeoBundle 'SQLUtilities'
 NeoBundle 'maksimr/vim-jsbeautify'
@@ -529,6 +535,9 @@ augroup END
 
 let g:syntastic_filetype_map = { 'tt2html':    'html',
 							   \ 'tx':         'html'}
+
+" tern_for_vim settings ===================================
+let g:tern_show_argument_hints=1
 
 " Indentation settings for using 2 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
