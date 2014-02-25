@@ -850,6 +850,25 @@ function! g:ref_source_webdict_sites.ej.filter(output)
   return join(split(a:output, "\n")[38 :], "\n")
 endfunction
 
+
+" weblio english settings ========================================
+
+function! s:open_weblio(word)
+	call openbrowser#open('http://ejje.weblio.jp/content/' . a:word)
+endfunction
+
+function! s:open_weblio_under_cursor()
+	call openbrowser#open('http://ejje.weblio.jp/content/' . expand('<cword>'))
+endfunction
+
+command! -nargs=1 OpenWeblio call s:open_weblio(<f-args>)
+command! -nargs=0 OpenWeblioUnderCursor call s:open_weblio_under_cursor()
+
+nnoremap <Leader>dpri :OpenWeblio<Space>
+nnoremap <Leader>dprh :OpenWeblioUnderCursor<CR>
+
+
+
 " vim-browsereload-mac settings =================================
 let g:returnApp = "iTerm"
 
