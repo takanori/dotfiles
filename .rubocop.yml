@@ -1,0 +1,24 @@
+AllCops:
+  Includes:
+    - Rakefile
+    - config.ru
+  Excludes:
+    - db/**
+    - config/**
+    - script/**
+    - !ruby/regexp /old_and_unused\.rb$/
+
+Documentation:
+  Enabled: false
+
+AsciiComments:
+  Enabled: false
+
+LineLength:
+  Max: 119
+
+MethodLength:
+  Enabled: false
+
+Blocks:
+  Enabled: false # {} for multi-line blocks in RSpec expectations is very common

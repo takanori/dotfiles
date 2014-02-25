@@ -17,6 +17,7 @@ fi
 
 # oh-my-zsh
 [ ! -d ~/.oh-my-zsh ] && curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+mv ~/.zshrc ~/.zshrc.backup
 rm -f ~/.zshrc
 
 
@@ -42,7 +43,7 @@ fi
 
 
 # other dotfiles
-DOT_FILES=( .ctags .gvimrc .perltidyrc .profile .tmux.conf .vimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.osx .zshrc.linux )
+DOT_FILES=( .ctags .gvimrc .perltidyrc .profile .rubocop.yml .tmux.conf .vimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.osx .zshrc.linux )
 
 for file in ${DOT_FILES[@]}
 do
