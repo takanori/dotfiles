@@ -486,7 +486,6 @@ nnoremap <silent> <Leader>uo  :<C-u>Unite -vertical outline<CR>
 nnoremap <silent> <Leader>dpm :<C-u>Unite ref/perldoc -default-action=tabopen<CR>
 nnoremap          <Leader>dpf :<C-u>Ref perldoc -f<Space>
 nnoremap          <Leader>dpc :<C-u>Ref cpan<Space>
-nnoremap          <Leader>dd  :<C-u>Ref webdict ej<Space>
 
 " unite-grep settings ======================================
 
@@ -850,6 +849,8 @@ function! g:ref_source_webdict_sites.ej.filter(output)
   return join(split(a:output, "\n")[38 :], "\n")
 endfunction
 
+nnoremap <Leader>ddi :<C-u>Ref webdict ej<Space>
+nnoremap <Leader>ddh :call ref#jump('normal', 'webdict', 'ej')<CR>
 
 " weblio english settings ========================================
 
