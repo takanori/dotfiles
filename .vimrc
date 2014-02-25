@@ -218,9 +218,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'sudo.vim'
 NeoBundle 'y-uuki/perl-local-lib-path.vim'
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'sjl/gundo.vim'
-NeoBundle 'tpope/vim-endwise'
 
 " NeoBundle 'wesleyche/Trinity'
 " NeoBundle 'scrooloose/nerdtree.git' "nerdtree is included in trinity
@@ -237,6 +235,7 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-indent'
 NeoBundle 'saihoooooooo/vim-textobj-space'
 NeoBundle 'Raimondi/delimitMate' " delimitMate breaks the redo features
+NeoBundle 'tpope/vim-endwise' " vim-endwise must be placed after delimitMate
 NeoBundle 'YankRing.vim'
 NeoBundle 'osyo-manga/vim-over'
 NeoBundle 'xolox/vim-session', {
