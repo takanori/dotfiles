@@ -175,6 +175,7 @@ endif
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 " NeoBundle 'Shougo/vimshell'
 NeoBundle 'tsukkee/unite-tag'
