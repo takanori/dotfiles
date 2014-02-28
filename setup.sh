@@ -69,6 +69,12 @@ case ${OSTYPE} in
 			do
 				brew install $homebrew_formula
 			done
+
+			# ADDITIONAL_HOMEBREW_FORMULAE=(graphviz)
+			# for $additional_homebrew_formula in ${ADDITIONAL_HOMEBREW_FORMULAE[@]}
+			# do
+			#     brew install $additional_homebrew_formula
+			# done
 		else	
 			printf "%-30s is already installed.\n" homebrew
 		fi
