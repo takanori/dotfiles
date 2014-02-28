@@ -43,7 +43,7 @@ fi
 
 
 # other dotfiles
-DOT_FILES=( .ctags .gvimrc .perltidyrc .profile .rubocop.yml .tmux.conf .vimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.osx .zshrc.linux )
+DOT_FILES=( .ctags .gvimrc .perltidyrc .profile .rubocop.yml .tmux.conf .vimrc .irbrc .zshrc .zshrc.alias .zshrc.custom .zshrc.osx .zshrc.linux )
 
 for file in ${DOT_FILES[@]}
 do
