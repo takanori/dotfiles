@@ -200,6 +200,7 @@ NeoBundle 'tpope/vim-rails', { 'autoload' : {
       \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'groenewege/vim-less'
+NeoBundle 'vim-scripts/applescript.vim'
 " NeoBundle 'timcharper/textile.vim'
 " Omni
 NeoBundle 'c9s/perlomni.vim'
@@ -524,19 +525,33 @@ nnoremap <silent> <Leader>vu :<C-u>diffupdate<CR>
 nnoremap <silent> <Leader>2 :<C-u>diffget //2 \| diffupdate<CR>
 nnoremap <silent> <Leader>3 :<C-u>diffget //3 \| diffupdate<CR>
 
+" filetype settings ========================================
 
-" syntastic settings =======================================
 augroup filetypedetectgroup
-	autocmd BufNewFile,BufRead *.tx      set filetype=html 
-	autocmd BufNewFile,BufRead *.tt      set filetype=html 
+	autocmd BufNewFile,BufRead *.tx           set filetype=html 
+	autocmd BufNewFile,BufRead *.tt           set filetype=html 
 	" autocmd BufNewFile,BufRead *.tx      set filetype=xslt
 	" autocmd BufNewFile,BufRead *.tt      set filetype=tt2html
 	"" Changing filetype to tt2html will stop autoindent and completion
-	autocmd BufNewFile,BufRead *.psgi    set filetype=perl
-	autocmd BufNewFile,BufRead cpanfile  set filetype=perl
-	autocmd BufNewFile,BufRead *.t       set filetype=perl
+	autocmd BufNewFile,BufRead *.psgi         set filetype=perl
+	autocmd BufNewFile,BufRead cpanfile       set filetype=perl
+	autocmd BufNewFile,BufRead *.t            set filetype=perl
+	autocmd BufNewFile,BufRead *.applescript  set filetype=applescript
 augroup END
 
+
+" filetypeごとのタブ幅やラッピングの指定
+
+autocmd FileType javascript   set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType perl         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
+autocmd FileType html         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType tt2html      set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType sql          set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType ruby         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
+
+" syntastic settings =======================================
 let g:syntastic_filetype_map = { 'tt2html':    'html',
 							   \ 'tx':         'html'}
 let g:syntastic_ruby_checkers = ['rubocop']
@@ -556,15 +571,6 @@ set shiftwidth=4
 set tabstop=4
 
 
-" filetypeごとのタブ幅やラッピングの指定
-
-autocmd FileType javascript   set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType perl         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-
-autocmd FileType html         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType tt2html      set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType sql          set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType ruby         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 " delimiteMate settings ======================================
 let g:delimitMate_matchpairs = "(:),[:],{:}"

@@ -1,4 +1,4 @@
-" moded to ~/.vimrc
+" moved to ~/.vimrc
 " augroup filetypedetectgroup
 	" autocmd BufNewFile,BufRead *.tx      setfiletype html 
 	" autocmd BufNewFile,BufRead *.tt      setfiletype html 
