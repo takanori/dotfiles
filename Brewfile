@@ -41,6 +41,7 @@ cask install evernote
 cask install flip4mac
 cask install genymotion
 cask install google-chrome
+cask install google-japanese-ime
 cask install iterm2
 cask install keyremap4macbook
 cask install kobito
