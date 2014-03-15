@@ -33,7 +33,6 @@ cask install alfred
 cask install appcleaner
 cask install bettertouchtool
 cask install cheatsheet
-cask install coteditor
 cask install cyberduck
 cask install dash
 cask install dropbox
@@ -52,4 +51,4 @@ cask install skype
 cask install sourcetree
 cask install vagrant
 cask install virtualbox
-cask alfred link
+# cask alfred link
