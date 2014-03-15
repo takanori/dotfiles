@@ -30,6 +30,7 @@ install zsh
 # brew-cask
 install brew-cask
 cask install alfred
+cask alfred link
 cask install appcleaner
 cask install bettertouchtool
 cask install cheatsheet
@@ -40,15 +41,13 @@ cask install evernote
 cask install flip4mac
 cask install genymotion
 cask install google-chrome
-cask install google-japanese-ime
+# cask install google-japanese-ime
 cask install iterm2
 cask install keyremap4macbook
 cask install kobito
 cask install livereload
-cask install lyn
 cask install sequel-pro
 cask install skype
 cask install sourcetree
 cask install vagrant
 cask install virtualbox
-# cask alfred link
