@@ -63,18 +63,21 @@ case ${OSTYPE} in
 
 		if [ ! which brew >/dev/null 2>&1 ] ; then
 			ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-			brew update
-			HOMEBREW_FORMULAE=(ack coreutils ctags jq lynx openssl pyenv rbenv readline ruby-build terminal-notifier the_silver_searcher tig tree wget)
-			for $homebrew_formula in ${HOMEBREW_FORMULAE[@]}
-			do
-				brew install $homebrew_formula
-			done
+			export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+			brew bundle
 
-			# ADDITIONAL_HOMEBREW_FORMULAE=(graphviz)
-			# for $additional_homebrew_formula in ${ADDITIONAL_HOMEBREW_FORMULAE[@]}
+			# brew update
+			# HOMEBREW_FORMULAE=(ack coreutils ctags jq lynx openssl pyenv rbenv readline ruby-build terminal-notifier the_silver_searcher tig tree wget)
+			# for $homebrew_formula in ${HOMEBREW_FORMULAE[@]}
 			# do
-			#     brew install $additional_homebrew_formula
+			#     brew install $homebrew_formula
 			# done
+
+			# # ADDITIONAL_HOMEBREW_FORMULAE=(graphviz)
+			# # for $additional_homebrew_formula in ${ADDITIONAL_HOMEBREW_FORMULAE[@]}
+			# # do
+			# #     brew install $additional_homebrew_formula
+			# # done
 		else	
 			printf "%-30s is already installed.\n" homebrew
 		fi
