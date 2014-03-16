@@ -44,6 +44,8 @@ done
 
 
 # tmuxinator
+[ ! -d ~/.tmuxinator ] && mkdir ~/.tmuxinator
+
 TMUXINATOR_FILES=( lifelog.yml )
 
 for tmuxinator_file in ${TMUXINATOR_FILES[@]}
@@ -52,7 +54,7 @@ do
 		printf "%-30s already exists.\n" $tmuxinator_file
 	else
 		ln -s "$HOME/dotfiles/tmuxinator/$tmuxinator_file" "$HOME/.tmuxinator/$tmuxinator_file"
-		printf "Made symbolic link $HOME/.tmuxinator/$file\n"
+		printf "Made symbolic link $HOME/.tmuxinator/$tmuxinator_file\n"
 	fi
 done
 
