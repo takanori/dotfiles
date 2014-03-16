@@ -62,7 +62,7 @@ read -r -d '' __timetrack_ignore_progs <<EOF
 less tail man vimman
 vi vim emacs
 tig
-ssh tmux mosh telnet nc netcat
+ssh tmux mux mosh telnet nc netcat
 gdb
 perl
 EOF
@@ -150,6 +150,12 @@ stack: $LBUFFER"
 zle -N show_buffer_stack
 setopt noflowcontrol
 bindkey '^Q' show_buffer_stack
+
+
+## Environment Variable
+
+# ### tmuxinator # use oh-my-zsh plugin instead
+# [ -f ~/.tmuxinator/tmuxinator.zsh ] && source ~/.tmuxinator/tmuxinator.zsh
 
 
 ## alias設定

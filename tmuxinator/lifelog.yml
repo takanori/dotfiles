@@ -1,0 +1,17 @@
+# ~/.tmuxinator/lifelog.yml
+
+name: lifelog
+root: ~/Drafts
+
+pre:
+    - cp today.md yesterday.md
+    - cp template_lifelog.md today.md
+
+windows:
+  - editor:
+      layout: even-horizontal
+      panes:
+          - today:
+              - vim today.md
+          - yesterday:
+              - vim yesterday.md

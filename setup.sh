@@ -29,19 +29,6 @@ echo '$ git config --global user.name "John Doe"'
 echo -e '$ git config --global user.email johndoe@example.com\n'
 
 
-# perl
-if [ ! -d ~/perl5/perlbrew ] ; then
-	curl -L http://install.perlbrew.pl | bash
-	source ~/perl5/perlbrew/etc/bashrc
-	perlbrew install --notest perl-5.18.2
-	perlbrew switch perl-5.18.2
-	perlbrew install-cpanm
-	cpanm Carton Reply App::watcher
-else
-	printf "%-30s is already installed.\n" perlbrew 
-fi
-
-
 # other dotfiles
 DOT_FILES=( .ctags .gemrc .gvimrc .irbrc .perltidyrc .profile .rubocop.yml .tmux.conf .vimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.osx .zshrc.linux )
 
@@ -55,9 +42,37 @@ do
 	fi
 done
 
+
+# tmuxinator
+TMUXINATOR_FILES=( lifelog.yml )
+
+for tmuxinator_file in ${TMUXINATOR_FILES[@]}
+do
+	if [ -L "$HOME/.tmuxinator/$tmuxinator_file" ] ; then
+		printf "%-30s already exists.\n" $tmuxinator_file
+	else
+		ln -s "$HOME/dotfiles/tmuxinator/$tmuxinator_file" "$HOME/.tmuxinator/$tmuxinator_file"
+		printf "Made symbolic link $HOME/.tmuxinator/$file\n"
+	fi
+done
+
+
 case ${OSTYPE} in
 	darwin*)
 		# Mac OS Settings ==============================================================
+
+		# perl
+
+		if [ ! -d ~/perl5/perlbrew ] ; then
+			curl -L http://install.perlbrew.pl | bash
+			source ~/perl5/perlbrew/etc/bashrc
+			perlbrew install --notest perl-5.18.2
+			perlbrew switch perl-5.18.2
+			perlbrew install-cpanm
+			cpanm Carton Reply App::watcher
+		else
+			printf "%-30s is already installed.\n" perlbrew 
+		fi
 
 		# homebrew
 
