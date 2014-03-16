@@ -62,7 +62,7 @@ read -r -d '' __timetrack_ignore_progs <<EOF
 less tail man vimman
 vi vim emacs
 tig
-ssh tmux mosh telnet nc netcat
+ssh tmux mux mosh telnet nc netcat
 gdb
 perl
 EOF
