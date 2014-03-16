@@ -152,6 +152,12 @@ setopt noflowcontrol
 bindkey '^Q' show_buffer_stack
 
 
+## Environment Variable
+
+# ### tmuxinator # use oh-my-zsh plugin instead
+# [ -f ~/.tmuxinator/tmuxinator.zsh ] && source ~/.tmuxinator/tmuxinator.zsh
+
+
 ## alias設定
 #
 [ -f ~/dotfiles/.zshrc.alias ] && source ~/dotfiles/.zshrc.alias

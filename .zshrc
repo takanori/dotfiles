@@ -46,7 +46,7 @@ ZSH_THEME="mh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(z osx vagrant github brew)
-plugins=(z osx vagrant brew)
+plugins=(brew osx tmuxinator vagrant z)
 
 source $ZSH/oh-my-zsh.sh
 
