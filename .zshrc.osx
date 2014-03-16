@@ -1,3 +1,5 @@
+[[ -s /usr/local/bin/zsh ]] && export SHELL=/usr/local/bin/zsh
+
 alias ls="gls --color=auto"
 # alias ctags='/Applications/MacVim.app/Contents/MacOS/ctags "$@"'
 
