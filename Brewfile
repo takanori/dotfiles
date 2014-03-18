@@ -29,19 +29,17 @@ install zsh
 
 # brew-cask
 install brew-cask
-cask install alfred
 cask alfred link
+cask install alfred
 cask install appcleaner
 cask install bettertouchtool
 cask install cheatsheet
 cask install cyberduck
-cask install dash
 cask install dropbox
 cask install evernote
 cask install flip4mac
 cask install genymotion
 cask install google-chrome
-# cask install google-japanese-ime
 cask install iterm2
 cask install keyremap4macbook
 cask install kobito
@@ -51,3 +49,5 @@ cask install skype
 cask install sourcetree
 cask install vagrant
 cask install virtualbox
+# cask install dash # download from AppStore for activation.
+# cask install google-japanese-ime # doesn't work well
