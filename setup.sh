@@ -30,7 +30,7 @@ echo -e '$ git config --global user.email johndoe@example.com\n'
 
 
 # other dotfiles
-DOT_FILES=( .ctags .gemrc .gvimrc .irbrc .perltidyrc .profile .rubocop.yml .tmux.conf .vimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.osx .zshrc.linux )
+DOT_FILES=( .ctags .gemrc .gvimrc .irbrc .perltidyrc .profile .rubocop.yml .vimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.osx .zshrc.linux )
 
 for file in ${DOT_FILES[@]}
 do
@@ -45,7 +45,7 @@ done
 
 # $HOME/bin
 [ ! -d $HOME/bin ] && mkdir $HOME/bin
-BIN_FILES=( brew-install-version.sh )
+BIN_FILES=( homebrew-install-version.sh )
 
 for bin_file in ${BIN_FILES[@]}
 do
@@ -90,9 +90,7 @@ case ${OSTYPE} in
 	darwin*)
 		# Mac OS Settings ==============================================================
 
-
 		# homebrew
-
 		if [ ! which brew >/dev/null 2>&1 ] ; then
 			ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 			export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -113,8 +111,28 @@ case ${OSTYPE} in
 		else	
 			printf "%-30s is already installed.\n" homebrew
 		fi
+
+		# tmux config
+		TMUX_OSX_CONFIG_FILE=".tmux.osx.1.9.conf"
+		if [ -L $HOME/$TMUX_OSX_CONFIG_FILE ] ; then
+			printf "%-30s already exists.\n" $TMUX_OSX_CONFIG_FILE 
+		else
+			ln -s $HOME/dotfiles/$TMUX_OSX_CONFIG_FILE $HOME/.tmux.conf
+			printf "Made symbolic link $HOME/.tmux.conf\n" 
+		fi
+
 		;;
 	linux*)
 		# Linux Settings ===============================================================
+
+		# tmux config
+		TMUX_LINUX_CONFIG_FILE=".tmux.linux.1.6.conf"
+		if [ -L $HOME/$TMUX_LINUX_CONFIG_FILE ] ; then
+			printf "%-30s already exists.\n" $TMUX_LINUX_CONFIG_FILE 
+		else
+			ln -s $HOME/dotfiles/$TMUX_LINUX_CONFIG_FILE $HOME/.tmux.conf
+			printf "Made symbolic link $HOME/.tmux.conf\n" 
+		fi
+
 		;;
 esac
