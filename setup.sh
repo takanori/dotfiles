@@ -80,7 +80,7 @@ if [ ! -d ~/perl5/perlbrew ] ; then
 	perlbrew install --notest perl-5.18.2
 	perlbrew switch perl-5.18.2
 	perlbrew install-cpanm
-	cpanm Carton Reply App::watcher
+	cpanm Carton Reply App::watcher Perl::Tidy
 else
 	printf "%-30s is already installed.\n" perlbrew 
 fi
