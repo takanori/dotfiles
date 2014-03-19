@@ -5,6 +5,7 @@
 # alias ls="gls --color=auto"
 #
 alias mv="mv -v"
+alias vi='vim'
 
 alias pmversion='perl -le '"'"'for $module (@ARGV) { eval "use $module"; print "$module ", ${"$module\::VERSION"} || "not found" }'"'"
 
