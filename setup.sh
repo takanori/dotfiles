@@ -43,9 +43,22 @@ do
 done
 
 
-# tmuxinator
-[ ! -d ~/.tmuxinator ] && mkdir ~/.tmuxinator
+# $HOME/bin
+[ ! -d $HOME/bin ] && mkdir $HOME/bin
+BIN_FILES=( brew-install-version.sh )
 
+for bin_file in ${BIN_FILES[@]}
+do
+	if [ -L "$HOME/bin/$bin_file" ] ; then
+		printf "%-30s already exists.\n" $bin_file
+	else
+		ln -s "$HOME/dotfiles/bin_files/$bin_file" "$HOME/bin/$bin_file"
+		printf "Made symbolic link $HOME/bin/$bin_file\n"
+	fi
+done
+
+# tmuxinator
+[ ! -d $HOME/.tmuxinator ] && mkdir $HOME/.tmuxinator 
 TMUXINATOR_FILES=( lifelog.yml )
 
 for tmuxinator_file in ${TMUXINATOR_FILES[@]}
