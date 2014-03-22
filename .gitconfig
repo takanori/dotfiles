@@ -1,0 +1,11 @@
+[user]
+	name = takanori
+	email = telespectroscope@gmail.com
+[color]
+	ui = true
+[merge]
+	tool = diffconflicts
+[mergetool]
+	keepBackup = false
+[core]
+	excludesfile = ~/.gitignore_global

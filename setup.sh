@@ -21,16 +21,8 @@ mv ~/.zshrc ~/.zshrc.backup
 rm -f ~/.zshrc
 
 
-# git settings
-git config --global color.ui true
-git config --global mergetool.keepBackup true
-echo -e '\n#### Setup git account name and email by yourself ####'
-echo '$ git config --global user.name "John Doe"'
-echo -e '$ git config --global user.email johndoe@example.com\n'
-
-
 # other dotfiles
-DOT_FILES=( .ctags .gemrc .gvimrc .irbrc .perltidyrc .profile .rubocop.yml .vimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.osx .zshrc.linux )
+DOT_FILES=( .ctags .gemrc .gitconfig .gitignore_global .gvimrc .irbrc .perltidyrc .profile .rubocop.yml .vimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.linux .zshrc.osx )
 
 for file in ${DOT_FILES[@]}
 do

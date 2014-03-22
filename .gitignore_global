@@ -1,0 +1,7 @@
+*.sw[po]
+*~
+.local.vimrc
+tags
+TAGS
+/.vimsessions
+.DS_Store
