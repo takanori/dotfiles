@@ -106,8 +106,8 @@ case ${OSTYPE} in
 
 		# tmux config
 		TMUX_OSX_CONFIG_FILE=".tmux.osx.1.9.conf"
-		if [ -L $HOME/$TMUX_OSX_CONFIG_FILE ] ; then
-			printf "%-30s already exists.\n" $TMUX_OSX_CONFIG_FILE 
+		if [ -L $HOME/.tmux.conf ] ; then
+			printf "%-30s already exists.\n" ".tmux.conf"
 		else
 			ln -s $HOME/dotfiles/$TMUX_OSX_CONFIG_FILE $HOME/.tmux.conf
 			printf "Made symbolic link $HOME/.tmux.conf\n" 
@@ -119,8 +119,8 @@ case ${OSTYPE} in
 
 		# tmux config
 		TMUX_LINUX_CONFIG_FILE=".tmux.linux.1.6.conf"
-		if [ -L $HOME/$TMUX_LINUX_CONFIG_FILE ] ; then
-			printf "%-30s already exists.\n" $TMUX_LINUX_CONFIG_FILE 
+		if [ -L $HOME/.tmux.conf ] ; then
+			printf "%-30s already exists.\n" ".tmux.conf"
 		else
 			ln -s $HOME/dotfiles/$TMUX_LINUX_CONFIG_FILE $HOME/.tmux.conf
 			printf "Made symbolic link $HOME/.tmux.conf\n" 
