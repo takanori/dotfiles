@@ -11,7 +11,4 @@ windows:
   - editor:
       layout: even-horizontal
       panes:
-          - today:
-              - vim today.md
-          - yesterday:
-              - vim yesterday.md
+          - vim
