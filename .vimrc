@@ -221,6 +221,7 @@ NeoBundle 'sudo.vim'
 NeoBundle 'y-uuki/perl-local-lib-path.vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'Lokaltog/vim-easymotion'
 
 " NeoBundle 'wesleyche/Trinity'
 " NeoBundle 'scrooloose/nerdtree.git' "nerdtree is included in trinity
@@ -514,6 +515,11 @@ endif
 
 " gundo settings ===========================================
 nnoremap <silent> <Leader>gu :<C-u>GundoToggle<CR>
+
+
+" easymotion settings ======================================
+let g:EasyMotion_do_mapping = 0 "Disable default mappings
+nmap s <Plug>(easymotion-s2)
 
 " vim-fugitive settings ====================================
 nnoremap <silent> <Leader>vs :<C-u>Gstatus<CR>
