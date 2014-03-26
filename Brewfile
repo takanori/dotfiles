@@ -46,8 +46,8 @@ cask install kobito
 cask install livereload
 cask install sequel-pro
 cask install skype
-cask install sourcetree
 cask install vagrant
 cask install virtualbox
 # cask install dash # download from AppStore for activation.
 # cask install google-japanese-ime # doesn't work well
+# cask install sourcetree # download from http://www.sourcetreeapp.com/
