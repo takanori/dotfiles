@@ -12,12 +12,14 @@ tap 'homebrew/binary'
 install ack 
 install coreutils 
 install ctags 
+install hub
 install jq 
 install lynx 
 install openssl 
 install pyenv 
 install rbenv 
 install readline 
+install reattach-to-user-namespace
 install ruby-build 
 install terminal-notifier 
 install the_silver_searcher 
