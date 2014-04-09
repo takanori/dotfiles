@@ -22,11 +22,11 @@ defaults write com.apple.dock autohide -bool true
 echo "Speed up dock show"
 defaults write com.apple.Dock autohide-delay -float 0
 
-echo "Remove the delay for showing the Dock in full screen"
-defaults write com.apple.dock autohide-fullscreen-delayed -bool false
+# echo "Remove the delay for showing the Dock in full screen"
+# defaults write com.apple.dock autohide-fullscreen-delayed -bool false
 
-echo "Minimize in application"
-defaults write com.apple.dock minimize-to-application -bool true
+# echo "Minimize in application"
+# defaults write com.apple.dock minimize-to-application -bool true
 
 # Put the dock show back to normal
 # defaults delete com.apple.Dock autohide-delay
