@@ -34,48 +34,18 @@ do
 	fi
 done
 
+# # perl
 
-# $HOME/bin
-[ ! -d $HOME/bin ] && mkdir $HOME/bin
-BIN_FILES=( homebrew-install-version.sh )
-
-for bin_file in ${BIN_FILES[@]}
-do
-	if [ -L "$HOME/bin/$bin_file" ] ; then
-		printf "%-30s already exists.\n" $bin_file
-	else
-		ln -s "$HOME/dotfiles/bin_files/$bin_file" "$HOME/bin/$bin_file"
-		printf "Made symbolic link $HOME/bin/$bin_file\n"
-	fi
-done
-
-# tmuxinator
-[ ! -d $HOME/.tmuxinator ] && mkdir $HOME/.tmuxinator 
-TMUXINATOR_FILES=( lifelog.yml )
-
-for tmuxinator_file in ${TMUXINATOR_FILES[@]}
-do
-	if [ -L "$HOME/.tmuxinator/$tmuxinator_file" ] ; then
-		printf "%-30s already exists.\n" $tmuxinator_file
-	else
-		ln -s "$HOME/dotfiles/tmuxinator/$tmuxinator_file" "$HOME/.tmuxinator/$tmuxinator_file"
-		printf "Made symbolic link $HOME/.tmuxinator/$tmuxinator_file\n"
-	fi
-done
-
-
-# perl
-
-if [ ! -d ~/perl5/perlbrew ] ; then
-	curl -L http://install.perlbrew.pl | bash
-	source ~/perl5/perlbrew/etc/bashrc
-	perlbrew install --notest perl-5.18.2
-	perlbrew switch perl-5.18.2
-	perlbrew install-cpanm
-	cpanm Carton Reply App::watcher Perl::Tidy
-else
-	printf "%-30s is already installed.\n" perlbrew 
-fi
+# if [ ! -d ~/perl5/perlbrew ] ; then
+#     curl -L http://install.perlbrew.pl | bash
+#     source ~/perl5/perlbrew/etc/bashrc
+#     perlbrew install --notest perl-5.18.2
+#     perlbrew switch perl-5.18.2
+#     perlbrew install-cpanm
+#     cpanm Carton Reply App::watcher Perl::Tidy
+# else
+#     printf "%-30s is already installed.\n" perlbrew 
+# fi
 
 
 case ${OSTYPE} in
