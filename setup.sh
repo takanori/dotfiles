@@ -124,6 +124,9 @@ case ${OSTYPE} in
 		# Show Status bar in Finder
 		defaults write com.apple.finder ShowStatusBar -bool true
 
+		# Show hidden files
+		defaults write com.apple.finder AppleShowAllFiles -bool true
+
 		# Disable dashboard
 		defaults write com.apple.dashboard mcx-disabled -boolean true
 
