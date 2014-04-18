@@ -542,6 +542,7 @@ augroup filetypedetectgroup
 	autocmd BufNewFile,BufRead *.psgi         set filetype=perl
 	autocmd BufNewFile,BufRead cpanfile       set filetype=perl
 	autocmd BufNewFile,BufRead *.t            set filetype=perl
+	autocmd BufNewFile,BufRead *.fcgi         set filetype=perl
 	autocmd BufNewFile,BufRead *.applescript  set filetype=applescript
 augroup END
 
