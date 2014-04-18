@@ -563,6 +563,9 @@ let g:syntastic_filetype_map = { 'tt2html':    'html',
 							   \ 'tx':         'html'}
 let g:syntastic_ruby_checkers = ['rubocop']
 
+let g:syntastic_enable_perl_checker = 1
+let g:syntastic_perl_checkers = ['perl', 'perlcritic']
+
 " tern_for_vim settings ===================================
 let g:tern_show_argument_hints=1
 
