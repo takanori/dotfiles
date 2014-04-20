@@ -113,6 +113,20 @@ case ${OSTYPE} in
 			printf "Made symbolic link $HOME/.tmux.conf\n" 
 		fi
 
+		
+		# Others
+		#Use current directory as default search scope in Finder
+		defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+		# Show Path bar in Finder
+		defaults write com.apple.finder ShowPathbar -bool true
+
+		# Show Status bar in Finder
+		defaults write com.apple.finder ShowStatusBar -bool true
+
+		# Disable dashboard
+		defaults write com.apple.dashboard mcx-disabled -boolean true
+
 		;;
 	linux*)
 		# Linux Settings ===============================================================
