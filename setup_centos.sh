@@ -37,7 +37,7 @@ case ${OSTYPE} in
 		# Linux Settings ===============================================================
 
 		# tmux config
-		TMUX_LINUX_CONFIG_FILE=".tmux.linux.1.6.conf"
+		TMUX_LINUX_CONFIG_FILE=".tmux.linux.1.9.conf"
 		if [ -L $HOME/.tmux.conf ] ; then
 			printf "%-30s already exists.\n" ".tmux.conf"
 		else
