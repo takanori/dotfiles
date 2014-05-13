@@ -37,7 +37,7 @@ cask install appcleaner
 cask install bettertouchtool
 cask install cheatsheet
 cask install cyberduck
-cask install dropbox
+# cask install dropbox
 cask install evernote
 cask install flip4mac
 cask install genymotion
