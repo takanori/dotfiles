@@ -22,7 +22,7 @@ rm -f ~/.zshrc
 
 
 # other dotfiles
-DOT_FILES=( .ctags .gemrc .gitconfig .gitignore_global .gvimrc .irbrc .perlcriticrc .perltidyrc .profile .rubocop.yml .vimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.linux .zshrc.osx )
+DOT_FILES=( .ctags .gemrc .gitignore_global .gvimrc .irbrc .perlcriticrc .perltidyrc .profile .rubocop.yml .vimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.linux .zshrc.osx )
 
 for file in ${DOT_FILES[@]}
 do
@@ -31,6 +31,20 @@ do
 	else
 		ln -s $HOME/dotfiles/$file $HOME/$file
 		printf "Made symbolic link $HOME/$file\n" 
+	fi
+done
+
+
+# copy some dotfiles
+DOT_FILES_TO_COPY=( .gitconfig )
+
+for file_to_copy in ${DOT_FILES_TO_COPY[@]}
+do
+	if [ -f $HOME/$file ] ; then
+		printf "%-30s already exists.\n" $file 
+	else
+		cp $HOME/dotfiles/$file $HOME/$file
+		printf "Made copy $HOME/$file\n" 
 	fi
 done
 
