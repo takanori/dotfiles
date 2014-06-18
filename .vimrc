@@ -188,10 +188,10 @@ NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'thinca/vim-localrc'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'marijnh/tern_for_vim', {
-  \ 'build': {
-  \   'others': 'npm install'
-  \}}
+" NeoBundle 'marijnh/tern_for_vim', {
+"   \ 'build': {
+"   \   'others': 'npm install'
+"   \}}
 " NeoBundle 'pangloss/vim-javascript'
 " NeoBundle 'mojo.vim'
 NeoBundle 'vim-perl/vim-perl'
@@ -551,6 +551,7 @@ augroup END
 
 autocmd FileType javascript   set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType perl         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType cs           set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
 autocmd FileType html         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType tt2html      set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -567,7 +568,7 @@ let g:syntastic_enable_perl_checker = 1
 let g:syntastic_perl_checkers = ['perl', 'perlcritic']
 
 " tern_for_vim settings ===================================
-let g:tern_show_argument_hints=1
+" let g:tern_show_argument_hints=1
 
 " Indentation settings for using 2 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
