@@ -480,7 +480,8 @@ let g:unite_enable_smart_case = 1
 
 nnoremap <Leader>uu :Unite 
 nnoremap <silent> <Leader>ut  :<C-u>Unite tab<CR>
-nnoremap <silent> <Leader>uf  :<C-u>Unite file_rec<CR>
+nnoremap <silent> <Leader>uf  :<C-u>Unite file_rec/async:!<CR>
+
 nnoremap <silent> <Leader>ub  :<C-u>Unite buffer_tab<CR>
 nnoremap <silent> <Leader>um  :<C-u>Unite bookmark<CR>
 nnoremap <silent> <Leader>ur  :<C-u>Unite file_mru<CR>
@@ -501,12 +502,11 @@ nnoremap <silent> <Leader>gw :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C
 nnoremap <silent> <Leader>ga  :<C-u>UniteResume search-buffer<CR>
 
 " unite grep に ag(The Silver Searcher) を使う
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt = ''
-endif
-
+" if executable('ag')
+"   let g:unite_source_grep_command = 'ag'
+"   let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+"   let g:unite_source_grep_recursive_opt = ''
+" endif
 
 " ==========================================================
 " ==========================================================
