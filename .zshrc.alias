@@ -20,6 +20,9 @@ function cpanv() {
 	perl -M$1 -le "print \$$1::VERSION"
 }
 
+# function pandoc_md_to_html () {
+#     pandoc -s --self-contained -t html5 -c ~/Pandoc/github.css $@
+# }
 function pandoc_md_to_html () {
-	pandoc -s --self-contained -t html5 -c ~/Pandoc/github.css $@
+	pandoc -s --self-contained -t html5 -c ~/Pandoc/small.css $@
 }
