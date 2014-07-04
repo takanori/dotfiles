@@ -204,6 +204,9 @@ NeoBundle 'vim-scripts/applescript.vim'
 " NeoBundle 'timcharper/textile.vim'
 " Omni
 NeoBundle 'c9s/perlomni.vim'
+NeoBundleLazy 'vim-jp/cpp-vim', {
+	\ 'autoload' : {'filetypes' : 'cpp'}
+	\ }
 
 " Formatter
 
