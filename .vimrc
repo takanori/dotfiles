@@ -489,7 +489,8 @@ let g:unite_enable_smart_case = 1
 
 nnoremap <Leader>uu :Unite 
 nnoremap <silent> <Leader>ut  :<C-u>Unite tab<CR>
-nnoremap <silent> <Leader>uf  :<C-u>Unite file_rec/async:!<CR>
+nnoremap <silent> <Leader>uf  :<C-u>Unite file_rec/async<CR>
+" nnoremap <silent> <Leader>uf  :<C-u>Unite file_rec/async:!<CR>
 
 nnoremap <silent> <Leader>ub  :<C-u>Unite buffer_tab<CR>
 nnoremap <silent> <Leader>um  :<C-u>Unite bookmark<CR>

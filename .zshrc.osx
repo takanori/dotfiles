@@ -31,7 +31,7 @@ eval "$(pyenv init -)"
 # export _JAVA_OPTIONS="-Dfile.encoding=UTF-8"
 
 # Android
-export PATH=/Applications/eclipse3.8/AndroidSDK/platform-tools:$PATH
+export PATH=/Applications/eclipse/sdk/platform-tools:$PATH
 
 # scala
 export PATH=$PATH:/usr/local/play-2.0.3
