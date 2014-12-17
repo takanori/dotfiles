@@ -538,6 +538,7 @@ let g:gista#github_user = 'takanori'
 let g:gista#post_private = 1
 
 " vim-fugitive settings ====================================
+set diffopt=vertical
 nnoremap <silent> <Leader>vs :<C-u>Gstatus<CR>
 " nnoremap <silent> <Leader>vr :<C-u>Gread<CR>
 " nnoremap <silent> <Leader>vw :<C-u>Gwrite<CR>
