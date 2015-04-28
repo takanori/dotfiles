@@ -17,7 +17,7 @@ mv ~/.zshrc ~/.zshrc.backup
 rm -f ~/.zshrc
 
 # other dotfiles
-DOT_FILES=( .ctags .gemrc .gitconfig .gitignore_global .gvimrc .irbrc .perltidyrc .profile .rubocop.yml .vimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.linux .zshrc.osx )
+DOT_FILES=( .tigrc .ctags .gemrc .gitconfig .gitignore_global .gvimrc .irbrc .perltidyrc .profile .rubocop.yml .vimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.linux .zshrc.osx )
 
 for file in ${DOT_FILES[@]}
 do
