@@ -51,4 +51,5 @@ export PATH=$MYSQL_HOME/bin:$PATH
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 # Go
-export GOPATH=$HOME/go
+export GOPATH=$HOME/go1.4
+export PATH=$GOPATH/bin:$PATH

@@ -203,6 +203,7 @@ NeoBundle 'tpope/vim-rails', { 'autoload' : {
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'vim-scripts/applescript.vim'
+NeoBundle 'fatih/vim-go'
 " NeoBundle 'timcharper/textile.vim'
 " Omni
 NeoBundle 'c9s/perlomni.vim'
