@@ -145,9 +145,12 @@ if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+
+" ==================================================
+" start of neobundle settings ========================
+" ==================================================
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -268,6 +271,11 @@ filetype plugin indent on     " Required!
 
 NeoBundleCheck
 
+call neobundle#end()
+" ==================================================
+" end of neobundle settings ========================
+" ==================================================
+
 
 " neocomplete and neocomplecache configulations ================================
 
@@ -354,7 +362,7 @@ if s:meet_neocomplete_requirements()
 	if !exists('g:neocomplete#sources#omni#input_patterns')
 	  let g:neocomplete#sources#omni#input_patterns = {}
 	endif
-	let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
+	" let g:neocomplete#sources#omni#input_patterns.ruby = '[^. *\t]\.\h\w*\|\h\w*::'
 	let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 	let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 	let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
@@ -562,6 +570,7 @@ augroup filetypedetectgroup
 	autocmd BufNewFile,BufRead *.t            set filetype=perl
 	autocmd BufNewFile,BufRead *.fcgi         set filetype=perl
 	autocmd BufNewFile,BufRead *.applescript  set filetype=applescript
+	autocmd BufNewFile,BufRead *.json         set filetype=txt
 augroup END
 
 
