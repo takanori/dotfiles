@@ -570,11 +570,13 @@ augroup filetypedetectgroup
 	autocmd BufNewFile,BufRead *.t            set filetype=perl
 	autocmd BufNewFile,BufRead *.fcgi         set filetype=perl
 	autocmd BufNewFile,BufRead *.applescript  set filetype=applescript
-	autocmd BufNewFile,BufRead *.json         set filetype=txt
+	autocmd BufNewFile,BufRead *.json         set filetype=text
 augroup END
 
 
 " filetypeごとのタブ幅やラッピングの指定
+"
+autocmd FileType text         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
 autocmd FileType javascript   set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType perl         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
