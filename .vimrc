@@ -587,6 +587,7 @@ autocmd FileType html         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 ex
 autocmd FileType tt2html      set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType sql          set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType ruby         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType sh           set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 
 " syntastic settings =======================================
