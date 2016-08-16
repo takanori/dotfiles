@@ -577,7 +577,6 @@ augroup filetypedetectgroup
 	autocmd BufRead,BufNewFile *.pu,*.uml,*.plantuml set filetype=plantuml
 augroup END
 
-
 " filetypeごとのタブ幅やラッピングの指定
 "
 autocmd FileType text         set nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab
@@ -591,6 +590,7 @@ autocmd FileType html         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 ex
 autocmd FileType tt2html      set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType sql          set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType ruby         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType plantuml     set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 
 " syntastic settings =======================================
@@ -641,6 +641,7 @@ command! -nargs=* Kobito call s:open_kobito(<f-args>)
 command! -nargs=0 KobitoClose call system("osascript -e 'tell application \"Kobito\" to quit'")
 " Kobito にフォーカスを移す
 command! -nargs=0 KobitoFocus call system("osascript -e 'tell application \"Kobito\" to activate'")
+
 
 " plantuml-syntax settings =================================
 let g:plantuml_executable_script = "~/dotfiles/bin_files/plantuml"
