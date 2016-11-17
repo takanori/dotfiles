@@ -52,6 +52,10 @@ export PATH=$MYSQL_HOME/bin:$PATH
 # node.js
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
+# ndenv
+export PATH="$HOME/.ndenv/bin:$PATH"
+eval "$(ndenv init -)"
+
 # Go
 export GOPATH=$HOME/go1.4
 export PATH=$GOPATH/bin:$PATH
