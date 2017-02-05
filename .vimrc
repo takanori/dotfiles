@@ -207,7 +207,10 @@ NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'vim-scripts/applescript.vim'
 NeoBundle 'fatih/vim-go'
+NeoBundle "aklt/plantuml-syntax"
+
 " NeoBundle 'timcharper/textile.vim'
+"
 " Omni
 NeoBundle 'c9s/perlomni.vim'
 NeoBundleLazy 'vim-jp/cpp-vim', {
@@ -260,9 +263,9 @@ NeoBundle 'xolox/vim-session', {
             \ 'depends' : 'xolox/vim-misc',
           \ }
 
-if OSTYPE == "Darwin\n"
-	NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
-endif
+" if OSTYPE == "Darwin\n"
+"     NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+" endif
 
 " Color Scheme
 NeoBundle 'altercation/vim-colors-solarized'
@@ -571,8 +574,8 @@ augroup filetypedetectgroup
 	autocmd BufNewFile,BufRead *.fcgi         set filetype=perl
 	autocmd BufNewFile,BufRead *.applescript  set filetype=applescript
 	autocmd BufNewFile,BufRead *.json         set filetype=text
+	autocmd BufRead,BufNewFile *.pu,*.uml,*.plantuml set filetype=plantuml
 augroup END
-
 
 " filetypeごとのタブ幅やラッピングの指定
 "
@@ -588,6 +591,7 @@ autocmd FileType tt2html      set nowrap tabstop=2 shiftwidth=2 softtabstop=2 ex
 autocmd FileType sql          set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType ruby         set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType sh           set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType plantuml     set nowrap tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 
 " syntastic settings =======================================
@@ -639,6 +643,10 @@ command! -nargs=0 KobitoClose call system("osascript -e 'tell application \"Kobi
 " Kobito にフォーカスを移す
 command! -nargs=0 KobitoFocus call system("osascript -e 'tell application \"Kobito\" to activate'")
 
+
+" plantuml-syntax settings =================================
+let g:plantuml_executable_script = "~/dotfiles/bin_files/plantuml"
+autocmd Filetype plantuml let &l:makeprg=g:plantuml_executable_script . " " .  fnameescape(expand("%"))
 
 
 " ==========================================================

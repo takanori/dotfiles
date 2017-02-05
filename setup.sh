@@ -99,8 +99,8 @@ case ${OSTYPE} in
 		# homebrew
 		if [ ! which brew >/dev/null 2>&1 ] ; then
 			ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-			export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-			brew bundle
+			# export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+			#brew bundle
 
 			# brew update
 			# HOMEBREW_FORMULAE=(ack coreutils ctags jq lynx openssl pyenv rbenv readline ruby-build terminal-notifier the_silver_searcher tig tree wget)
