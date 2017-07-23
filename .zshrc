@@ -52,5 +52,3 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 source ~/.zshrc.custom
-
-[ -s "/Users/takanori.uzuka/.nvm/nvm.sh" ] && . "/Users/takanori.uzuka/.nvm/nvm.sh" # This loads nvm
