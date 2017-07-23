@@ -204,6 +204,7 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails', { 'autoload' : {
       \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'vim-scripts/applescript.vim'
 NeoBundle 'fatih/vim-go'
@@ -641,9 +642,10 @@ endfunction
 command! -nargs=* Kobito call s:open_kobito(<f-args>)
 " Kobito を閉じる
 command! -nargs=0 KobitoClose call system("osascript -e 'tell application \"Kobito\" to quit'")
-" Kobito にフォーカスを移す
-command! -nargs=0 KobitoFocus call system("osascript -e 'tell application \"Kobito\" to activate'")
 
+
+" previm settings =========================
+let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 " plantuml-syntax settings =================================
 let g:plantuml_executable_script = "~/dotfiles/bin_files/plantuml"
