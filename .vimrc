@@ -208,6 +208,7 @@ NeoBundle 'groenewege/vim-less'
 NeoBundle 'vim-scripts/applescript.vim'
 NeoBundle 'fatih/vim-go'
 NeoBundle "aklt/plantuml-syntax"
+NeoBundle 'cocoa.vim'
 
 " NeoBundle 'timcharper/textile.vim'
 "
