@@ -204,6 +204,7 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails', { 'autoload' : {
       \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'vim-scripts/applescript.vim'
 NeoBundle 'fatih/vim-go'
@@ -504,16 +505,17 @@ let g:unite_enable_smart_case = 1
 
 nnoremap <Leader>uu :Unite 
 nnoremap <silent> <Leader>ut  :<C-u>Unite tab<CR>
-nnoremap <silent> <Leader>uf  :<C-u>Unite file_rec/async<CR>
-" nnoremap <silent> <Leader>uf  :<C-u>Unite file_rec/async:!<CR>
+" nnoremap <silent> <Leader>uf  :<C-u>Unite file_rec/async<CR>
+nnoremap <silent> <Leader>uf  :<C-u>Unite file_rec/async:!<CR>
 
-nnoremap <silent> <Leader>ub  :<C-u>Unite buffer_tab<CR>
+" nnoremap <silent> <Leader>ub  :<C-u>Unite buffer_tab<CR>
+nnoremap <silent> <Leader>ub  :<C-u>Unite buffer<CR>
 nnoremap <silent> <Leader>um  :<C-u>Unite bookmark<CR>
 nnoremap <silent> <Leader>ur  :<C-u>Unite file_mru<CR>
 nnoremap <silent> <Leader>uo  :<C-u>Unite -vertical outline<CR>
-nnoremap <silent> <Leader>dpm :<C-u>Unite ref/perldoc -default-action=tabopen<CR>
-nnoremap          <Leader>dpf :<C-u>Ref perldoc -f<Space>
-nnoremap          <Leader>dpc :<C-u>Ref cpan<Space>
+" nnoremap <silent> <Leader>dpm :<C-u>Unite ref/perldoc -default-action=tabopen<CR>
+" nnoremap          <Leader>dpf :<C-u>Ref perldoc -f<Space>
+" nnoremap          <Leader>dpc :<C-u>Ref cpan<Space>
 
 " unite-grep settings ======================================
 
@@ -521,7 +523,7 @@ nnoremap          <Leader>dpc :<C-u>Ref cpan<Space>
 nnoremap <silent> <Leader>gg  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 
 " カーソル位置の単語をgrep検索
-nnoremap <silent> <Leader>gw :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
+" nnoremap <silent> <Leader>gw :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
 
 " grep検索結果の再呼出
 nnoremap <silent> <Leader>ga  :<C-u>UniteResume search-buffer<CR>
@@ -539,7 +541,7 @@ nnoremap <silent> <Leader>ga  :<C-u>UniteResume search-buffer<CR>
 
 
 " gundo settings ===========================================
-nnoremap <silent> <Leader>gu :<C-u>GundoToggle<CR>
+" nnoremap <silent> <Leader>gu :<C-u>GundoToggle<CR>
 
 
 " easymotion settings ======================================
@@ -641,9 +643,10 @@ endfunction
 command! -nargs=* Kobito call s:open_kobito(<f-args>)
 " Kobito を閉じる
 command! -nargs=0 KobitoClose call system("osascript -e 'tell application \"Kobito\" to quit'")
-" Kobito にフォーカスを移す
-command! -nargs=0 KobitoFocus call system("osascript -e 'tell application \"Kobito\" to activate'")
 
+
+" previm settings =========================
+let g:previm_open_cmd = 'open -a Google\ Chrome'
 
 " plantuml-syntax settings =================================
 let g:plantuml_executable_script = "~/dotfiles/bin_files/plantuml"
