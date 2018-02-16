@@ -7,22 +7,3 @@
 alias mv="mv -v"
 alias tree="tree -C"
 alias vi='vim'
-
-alias pmversion='perl -le '"'"'for $module (@ARGV) { eval "use $module"; print "$module ", ${"$module\::VERSION"} || "not found" }'"'"
-
-alias pmcpanfile='perl -le '"'"'for $module (@ARGV) { eval "use $module"; print "requires \"$module\", \"", ${"$module\::VERSION"} || "not found" , "\";"}'"'"
-
-function vimman() {
-	vim -c 'Ref -open=split man '$1 -c 'winc j' -c 'q'
-}
-
-function cpanv() {
-	perl -M$1 -le "print \$$1::VERSION"
-}
-
-# function pandoc_md_to_html () {
-#     pandoc -s --self-contained -t html5 -c ~/Pandoc/github.css $@
-# }
-function pandoc_md_to_html () {
-	pandoc -s --self-contained -t html5 -c ~/Pandoc/small.css $@
-}
