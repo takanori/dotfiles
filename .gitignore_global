@@ -11,6 +11,11 @@ Assets/ConsoleE
 Assets/Plugins/ConsoleE.meta
 Assets/Plugins/ConsoleE
 
+# maintainer
+Assets/Plugins/CodeStage.meta
+Assets/Plugins/CodeStage/
+ProjectSettings/MaintainerSettings.asset
+
 # Rider
 .idea
 Assets/Plugins/Editor/JetBrains
