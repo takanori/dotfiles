@@ -224,6 +224,7 @@ NeoBundleLazy 'vim-jp/cpp-vim', {
 NeoBundle 'Align'
 NeoBundle 'SQLUtilities'
 NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'editorconfig/editorconfig-vim'
 
 NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'tpope/vim-unimpaired'
