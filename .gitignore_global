@@ -17,6 +17,5 @@ Assets/Plugins/CodeStage/
 ProjectSettings/MaintainerSettings.asset
 
 # Rider
-.idea
 Assets/Plugins/Editor/JetBrains
 Assets/Plugins/Editor/JetBrains.meta
