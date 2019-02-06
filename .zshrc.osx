@@ -49,9 +49,9 @@ export SCALA_HOME=/usr/local/Cellar/scala/2.9.1
 export MYSQL_HOME=/usr/local/mysql
 export PATH=$MYSQL_HOME/bin:$PATH
 
-# ndenv
-export PATH="$HOME/.ndenv/bin:$PATH"
-eval "$(ndenv init -)"
+# nodenv
+#export PATH="$HOME/.ndenv/bin:$PATH"
+eval "$(nodenv init -)"
 
 # Go
 export GOPATH=$HOME/go1.4
