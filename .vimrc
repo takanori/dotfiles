@@ -224,6 +224,8 @@ NeoBundleLazy 'vim-jp/cpp-vim', {
 NeoBundle 'Align'
 NeoBundle 'SQLUtilities'
 NeoBundle 'maksimr/vim-jsbeautify'
+NeoBundle 'editorconfig/editorconfig-vim'
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'tpope/vim-unimpaired'
