@@ -1,2 +1,6 @@
 [codestyle]
 workspace_dir='~/AlgorithmPrac/Atcoder/'
+
+[etc]
+in_example_format="sample-{}.in"
+out_example_format="sample-{}.out"
