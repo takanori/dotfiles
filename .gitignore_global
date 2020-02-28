@@ -1,8 +1,6 @@
 *.sw[po]
 *~
 .local.vimrc
-tags
-TAGS
 .DS_Store
 
 # console enhanced
