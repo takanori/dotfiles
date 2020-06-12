@@ -191,7 +191,7 @@ NeoBundle 'Shougo/unite-outline'
 
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'thinca/vim-localrc'
-NeoBundle 'hail2u/vim-css3-syntax'
+" NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'jelera/vim-javascript-syntax'
 " NeoBundle 'marijnh/tern_for_vim', {
 "   \ 'build': {
@@ -199,22 +199,22 @@ NeoBundle 'jelera/vim-javascript-syntax'
 "   \}}
 " NeoBundle 'pangloss/vim-javascript'
 " NeoBundle 'mojo.vim'
-NeoBundle 'vim-perl/vim-perl'
+" NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails', { 'autoload' : {
       \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'groenewege/vim-less'
-NeoBundle 'vim-scripts/applescript.vim'
+" NeoBundle 'vim-scripts/applescript.vim'
 " NeoBundle 'fatih/vim-go'
 NeoBundle "aklt/plantuml-syntax"
-NeoBundle 'cocoa.vim'
+" NeoBundle 'cocoa.vim'
 
 " NeoBundle 'timcharper/textile.vim'
 "
 " Omni
-NeoBundle 'c9s/perlomni.vim'
+" NeoBundle 'c9s/perlomni.vim'
 NeoBundleLazy 'vim-jp/cpp-vim', {
 	\ 'autoload' : {'filetypes' : 'cpp'}
 	\ }
@@ -222,37 +222,37 @@ NeoBundleLazy 'vim-jp/cpp-vim', {
 " Formatter
 
 NeoBundle 'Align'
-NeoBundle 'SQLUtilities'
+" NeoBundle 'SQLUtilities'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'editorconfig/editorconfig-vim'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'mojako/ref-sources.vim'
+" NeoBundle 'thinca/vim-ref'
+" NeoBundle 'mojako/ref-sources.vim'
 " NeoBundle 'hotchpotch/perldoc-vim'
-NeoBundle 'thinca/vim-quickrun'
+" NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'sudo.vim'
-NeoBundle 'y-uuki/perl-local-lib-path.vim'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundleLazy 'lambdalisue/vim-gista', {
-    \ 'autoload': {
-    \    'commands': ['Gista'],
-    \    'mappings': '<Plug>(gista-',
-    \    'unite_sources': 'gista',
-    \}}
+" NeoBundle 'y-uuki/perl-local-lib-path.vim'
+" NeoBundle 'tyru/open-browser.vim'
+" NeoBundle 'sjl/gundo.vim'
+" NeoBundle 'Lokaltog/vim-easymotion'
+" NeoBundleLazy 'lambdalisue/vim-gista', {
+"     \ 'autoload': {
+"     \    'commands': ['Gista'],
+"     \    'mappings': '<Plug>(gista-',
+"     \    'unite_sources': 'gista',
+"     \}}
 
 " NeoBundle 'wesleyche/Trinity'
 " NeoBundle 'scrooloose/nerdtree.git' "nerdtree is included in trinity
-NeoBundle 'wesleyche/SrcExpl'
-NeoBundle 'thinca/vim-qfreplace'
+" NeoBundle 'wesleyche/SrcExpl'
+" NeoBundle 'thinca/vim-qfreplace'
 "NeoBundle 'taglist.vim' "Download from http://www.vim.org/scripts/download_script.php?src_id=19574
-NeoBundle "majutsushi/tagbar"
+" NeoBundle "majutsushi/tagbar"
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'tell-k/vim-browsereload-mac'
+" NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'tpope/vim-surround'
 " NeoBundle 'mattn/zencoding-vim' " Moved to emmet-vim
 NeoBundle 'mattn/emmet-vim'
@@ -304,7 +304,6 @@ if s:meet_neocomplete_requirements()
 	let g:neocomplete#sources#dictionary#dictionaries = {
 		\ 'default'   : '',
 		\ 'vimshell'  : $HOME.'/.vimshell_hist',
-		\ 'perl'      : $HOME . '/.vim/dict/perl.dict',
 		\ 'scheme'    : $HOME.'/.gosh_completions'
 			\ }
 
@@ -374,9 +373,9 @@ if s:meet_neocomplete_requirements()
 	let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 	let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
-	" For perlomni.vim setting.
-	" https://github.com/c9s/perlomni.vim
-	let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+	" " For perlomni.vim setting.
+	" " https://github.com/c9s/perlomni.vim
+	" let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 else
     " 今までの neocomplcache の設定
 
@@ -468,7 +467,7 @@ else
 
 	" For perlomni.vim setting.
 	" https://github.com/c9s/perlomni.vim
-	let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+	" let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 endif
 
@@ -546,13 +545,13 @@ nnoremap <silent> <Leader>ga  :<C-u>UniteResume search-buffer<CR>
 " nnoremap <silent> <Leader>gu :<C-u>GundoToggle<CR>
 
 
-" easymotion settings ======================================
-let g:EasyMotion_do_mapping = 0 "Disable default mappings
-nmap s <Plug>(easymotion-s2)
+" " easymotion settings ======================================
+" let g:EasyMotion_do_mapping = 0 "Disable default mappings
+" nmap s <Plug>(easymotion-s2)
 
-" vim-gista settings =======================================
-let g:gista#github_user = 'takanori'
-let g:gista#post_private = 1
+" " vim-gista settings =======================================
+" let g:gista#github_user = 'takanori'
+" let g:gista#post_private = 1
 
 " vim-fugitive settings ====================================
 set diffopt=vertical
@@ -604,8 +603,8 @@ let g:syntastic_filetype_map = { 'tt2html':    'html',
 							   \ 'tx':         'html'}
 let g:syntastic_ruby_checkers = ['rubocop']
 
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_perl_checkers = ['perl', 'perlcritic']
+" let g:syntastic_enable_perl_checker = 1
+" let g:syntastic_perl_checkers = ['perl', 'perlcritic']
 
 " tern_for_vim settings ===================================
 " let g:tern_show_argument_hints=1
@@ -663,9 +662,9 @@ autocmd Filetype plantuml let &l:makeprg=g:plantuml_executable_script . " " .  f
 let g:Align_xstrlen=3
 
 
-" perl tidy ================================================
-nnoremap <Leader>fp <Esc>:%! perltidy<CR>
-vnoremap <Leader>fp <Esc>:'<,'>! perltidy<CR>
+" " perl tidy ================================================
+" nnoremap <Leader>fp <Esc>:%! perltidy<CR>
+" vnoremap <Leader>fp <Esc>:'<,'>! perltidy<CR>
 
 
 " JsBeautify settings  =====================================
@@ -696,10 +695,10 @@ let g:vimfiler_as_default_explorer = 1
 " let g:vimfiler_split_rule = "belowright"
 
 
-" tagbar settings ========================================
-set tags=tags,~/perl5/perlbrew/perls/perl-5.18.1/lib/tags
-let g:tagbar_autoclose = 1
-nnoremap <silent> <Leader>b :TagbarToggle<CR> " 'b'ar
+" " tagbar settings ========================================
+" set tags=tags,~/perl5/perlbrew/perls/perl-5.18.1/lib/tags
+" let g:tagbar_autoclose = 1
+" nnoremap <silent> <Leader>b :TagbarToggle<CR> " 'b'ar
 
 
 " quickrun settings ========================================
@@ -889,46 +888,46 @@ nnoremap <Leader>da :call <SID>dash(expand('<cword>'))<CR>
 let g:ref_open = 'tabnew'
 
 
-" vim-ref webdict settings =======================================
-"http://eow.alc.co.jp/search?q=preference
-let g:ref_source_webdict_sites = {
-\   'je': {
-\     'url': 'http://eow.alc.co.jp/search?q=%s',
-\   },
-\   'ej': {
-\     'url': 'http://eow.alc.co.jp/search?q=%s',
-\   },
-\ }
+" " vim-ref webdict settings =======================================
+" "http://eow.alc.co.jp/search?q=preference
+" let g:ref_source_webdict_sites = {
+" \   'je': {
+" \     'url': 'http://eow.alc.co.jp/search?q=%s',
+" \   },
+" \   'ej': {
+" \     'url': 'http://eow.alc.co.jp/search?q=%s',
+" \   },
+" \ }
  
-"デフォルトサイト
-let g:ref_source_webdict_sites.default = 'ej'
+" "デフォルトサイト
+" let g:ref_source_webdict_sites.default = 'ej'
  
-"出力に対するフィルタ。最初の数行を削除
-function! g:ref_source_webdict_sites.je.filter(output)
-  return join(split(a:output, "\n")[38 :], "\n")
-endfunction
-function! g:ref_source_webdict_sites.ej.filter(output)
-  return join(split(a:output, "\n")[38 :], "\n")
-endfunction
+" "出力に対するフィルタ。最初の数行を削除
+" function! g:ref_source_webdict_sites.je.filter(output)
+"   return join(split(a:output, "\n")[38 :], "\n")
+" endfunction
+" function! g:ref_source_webdict_sites.ej.filter(output)
+"   return join(split(a:output, "\n")[38 :], "\n")
+" endfunction
 
-nnoremap <Leader>ddi :<C-u>Ref webdict ej<Space>
-nnoremap <Leader>ddh :call ref#jump('normal', 'webdict', 'ej')<CR>
+" nnoremap <Leader>ddi :<C-u>Ref webdict ej<Space>
+" nnoremap <Leader>ddh :call ref#jump('normal', 'webdict', 'ej')<CR>
 
-" weblio english settings ========================================
+" " weblio english settings ========================================
 
-function! s:open_weblio(word)
-	call openbrowser#open('http://ejje.weblio.jp/content/' . a:word)
-endfunction
+" function! s:open_weblio(word)
+"     call openbrowser#open('http://ejje.weblio.jp/content/' . a:word)
+" endfunction
 
-function! s:open_weblio_under_cursor()
-	call openbrowser#open('http://ejje.weblio.jp/content/' . expand('<cword>'))
-endfunction
+" function! s:open_weblio_under_cursor()
+"     call openbrowser#open('http://ejje.weblio.jp/content/' . expand('<cword>'))
+" endfunction
 
-command! -nargs=1 OpenWeblio call s:open_weblio(<f-args>)
-command! -nargs=0 OpenWeblioUnderCursor call s:open_weblio_under_cursor()
+" command! -nargs=1 OpenWeblio call s:open_weblio(<f-args>)
+" command! -nargs=0 OpenWeblioUnderCursor call s:open_weblio_under_cursor()
 
-nnoremap <Leader>dpri :OpenWeblio<Space>
-nnoremap <Leader>dprh :OpenWeblioUnderCursor<CR>
+" nnoremap <Leader>dpri :OpenWeblio<Space>
+" nnoremap <Leader>dprh :OpenWeblioUnderCursor<CR>
 
 
 
@@ -936,60 +935,60 @@ nnoremap <Leader>dprh :OpenWeblioUnderCursor<CR>
 let g:returnApp = "iTerm"
 
 
-" Checking typo. ================================================
-" http://d.hatena.ne.jp/tyru/20130419/avoid_tyop （partially amended）
-autocmd BufWriteCmd :*,*[,*] call s:write_check_typo(expand('<afile>'))
-function! s:write_check_typo(file)
-    let prompt = "possible typo: really want to write to '" . a:file . "'?(y/n):"
-    let input = input(prompt)
-    if input =~? '^y\(es\)\=$'
-        execute 'write'.(v:cmdbang ? '!' : '') a:file
-    endif
-endfunction
+ " Checking typo. ================================================
+" " http://d.hatena.ne.jp/tyru/20130419/avoid_tyop （partially amended）
+" autocmd BufWriteCmd :*,*[,*] call s:write_check_typo(expand('<afile>'))
+" function! s:write_check_typo(file)
+"     let prompt = "possible typo: really want to write to '" . a:file . "'?(y/n):"
+"     let input = input(prompt)
+"     if input =~? '^y\(es\)\=$'
+"         execute 'write'.(v:cmdbang ? '!' : '') a:file
+"     endif
+" endfunction
 
-" mark settings ==================================================
-" マーク設定 : {{{
+" " mark settings ==================================================
+" " マーク設定 : {{{
 
-augroup MyAutoCmd
-	autocmd!
-augroup END
+" augroup MyAutoCmd
+"     autocmd!
+" augroup END
 
-" 基本マップ
-nnoremap [Mark] <Nop>
-nmap m [Mark]
+" " 基本マップ
+" nnoremap [Mark] <Nop>
+" nmap m [Mark]
 
-" 現在位置をマーク
-if !exists('g:markrement_char')
-    let g:markrement_char = [
-    \     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
-    \     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-    \ ]
-endif
-nnoremap <silent>[Mark]m :<C-u>call <SID>AutoMarkrement()<CR>
-function! s:AutoMarkrement()
-    if !exists('b:markrement_pos')
-        let b:markrement_pos = 0
-    else
-        let b:markrement_pos = (b:markrement_pos + 1) % len(g:markrement_char)
-    endif
-    execute 'mark' g:markrement_char[b:markrement_pos]
-    echo 'marked' g:markrement_char[b:markrement_pos]
-endfunction
+" " 現在位置をマーク
+" if !exists('g:markrement_char')
+"     let g:markrement_char = [
+"     \     'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+"     \     'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
+"     \ ]
+" endif
+" nnoremap <silent>[Mark]m :<C-u>call <SID>AutoMarkrement()<CR>
+" function! s:AutoMarkrement()
+"     if !exists('b:markrement_pos')
+"         let b:markrement_pos = 0
+"     else
+"         let b:markrement_pos = (b:markrement_pos + 1) % len(g:markrement_char)
+"     endif
+"     execute 'mark' g:markrement_char[b:markrement_pos]
+"     echo 'marked' g:markrement_char[b:markrement_pos]
+" endfunction
 
-" 次/前のマーク
-nnoremap [Mark]n ]`
-nnoremap [Mark]p [`
+" " 次/前のマーク
+" nnoremap [Mark]n ]`
+" nnoremap [Mark]p [`
 
-" 一覧表示
-nnoremap [Mark]l :<C-u>marks<CR>
+" " 一覧表示
+" nnoremap [Mark]l :<C-u>marks<CR>
 
-" 前回終了位置に移動
-autocmd MyAutoCmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line('$') | exe 'normal g`"' | endif
+" " 前回終了位置に移動
+" autocmd MyAutoCmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line('$') | exe 'normal g`"' | endif
 
-" バッファ読み込み時にマークを初期化
-autocmd MyAutoCmd BufReadPost * delmarks!
+" " バッファ読み込み時にマークを初期化
+" autocmd MyAutoCmd BufReadPost * delmarks!
 
-" }}}
+" " }}}
 
 
 
