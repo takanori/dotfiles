@@ -229,21 +229,21 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'mojako/ref-sources.vim'
+" NeoBundle 'thinca/vim-ref'
+" NeoBundle 'mojako/ref-sources.vim'
 " NeoBundle 'hotchpotch/perldoc-vim'
-NeoBundle 'thinca/vim-quickrun'
+" NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'sudo.vim'
 " NeoBundle 'y-uuki/perl-local-lib-path.vim'
 NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundleLazy 'lambdalisue/vim-gista', {
-    \ 'autoload': {
-    \    'commands': ['Gista'],
-    \    'mappings': '<Plug>(gista-',
-    \    'unite_sources': 'gista',
-    \}}
+" NeoBundle 'sjl/gundo.vim'
+" NeoBundle 'Lokaltog/vim-easymotion'
+" NeoBundleLazy 'lambdalisue/vim-gista', {
+"     \ 'autoload': {
+"     \    'commands': ['Gista'],
+"     \    'mappings': '<Plug>(gista-',
+"     \    'unite_sources': 'gista',
+"     \}}
 
 " NeoBundle 'wesleyche/Trinity'
 " NeoBundle 'scrooloose/nerdtree.git' "nerdtree is included in trinity
@@ -545,13 +545,13 @@ nnoremap <silent> <Leader>ga  :<C-u>UniteResume search-buffer<CR>
 " nnoremap <silent> <Leader>gu :<C-u>GundoToggle<CR>
 
 
-" easymotion settings ======================================
-let g:EasyMotion_do_mapping = 0 "Disable default mappings
-nmap s <Plug>(easymotion-s2)
+" " easymotion settings ======================================
+" let g:EasyMotion_do_mapping = 0 "Disable default mappings
+" nmap s <Plug>(easymotion-s2)
 
-" vim-gista settings =======================================
-let g:gista#github_user = 'takanori'
-let g:gista#post_private = 1
+" " vim-gista settings =======================================
+" let g:gista#github_user = 'takanori'
+" let g:gista#post_private = 1
 
 " vim-fugitive settings ====================================
 set diffopt=vertical
