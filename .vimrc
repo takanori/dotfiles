@@ -889,30 +889,30 @@ nnoremap <Leader>da :call <SID>dash(expand('<cword>'))<CR>
 let g:ref_open = 'tabnew'
 
 
-" vim-ref webdict settings =======================================
-"http://eow.alc.co.jp/search?q=preference
-let g:ref_source_webdict_sites = {
-\   'je': {
-\     'url': 'http://eow.alc.co.jp/search?q=%s',
-\   },
-\   'ej': {
-\     'url': 'http://eow.alc.co.jp/search?q=%s',
-\   },
-\ }
+" " vim-ref webdict settings =======================================
+" "http://eow.alc.co.jp/search?q=preference
+" let g:ref_source_webdict_sites = {
+" \   'je': {
+" \     'url': 'http://eow.alc.co.jp/search?q=%s',
+" \   },
+" \   'ej': {
+" \     'url': 'http://eow.alc.co.jp/search?q=%s',
+" \   },
+" \ }
  
-"デフォルトサイト
-let g:ref_source_webdict_sites.default = 'ej'
+" "デフォルトサイト
+" let g:ref_source_webdict_sites.default = 'ej'
  
-"出力に対するフィルタ。最初の数行を削除
-function! g:ref_source_webdict_sites.je.filter(output)
-  return join(split(a:output, "\n")[38 :], "\n")
-endfunction
-function! g:ref_source_webdict_sites.ej.filter(output)
-  return join(split(a:output, "\n")[38 :], "\n")
-endfunction
+" "出力に対するフィルタ。最初の数行を削除
+" function! g:ref_source_webdict_sites.je.filter(output)
+"   return join(split(a:output, "\n")[38 :], "\n")
+" endfunction
+" function! g:ref_source_webdict_sites.ej.filter(output)
+"   return join(split(a:output, "\n")[38 :], "\n")
+" endfunction
 
-nnoremap <Leader>ddi :<C-u>Ref webdict ej<Space>
-nnoremap <Leader>ddh :call ref#jump('normal', 'webdict', 'ej')<CR>
+" nnoremap <Leader>ddi :<C-u>Ref webdict ej<Space>
+" nnoremap <Leader>ddh :call ref#jump('normal', 'webdict', 'ej')<CR>
 
 " " weblio english settings ========================================
 
