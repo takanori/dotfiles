@@ -199,7 +199,7 @@ NeoBundle 'jelera/vim-javascript-syntax'
 "   \}}
 " NeoBundle 'pangloss/vim-javascript'
 " NeoBundle 'mojo.vim'
-NeoBundle 'vim-perl/vim-perl'
+" NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails', { 'autoload' : {
       \ 'filetypes' : ['haml', 'ruby', 'eruby'] }}
@@ -214,7 +214,7 @@ NeoBundle 'cocoa.vim'
 " NeoBundle 'timcharper/textile.vim'
 "
 " Omni
-NeoBundle 'c9s/perlomni.vim'
+" NeoBundle 'c9s/perlomni.vim'
 NeoBundleLazy 'vim-jp/cpp-vim', {
 	\ 'autoload' : {'filetypes' : 'cpp'}
 	\ }
@@ -234,7 +234,7 @@ NeoBundle 'mojako/ref-sources.vim'
 " NeoBundle 'hotchpotch/perldoc-vim'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'sudo.vim'
-NeoBundle 'y-uuki/perl-local-lib-path.vim'
+" NeoBundle 'y-uuki/perl-local-lib-path.vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
@@ -304,7 +304,6 @@ if s:meet_neocomplete_requirements()
 	let g:neocomplete#sources#dictionary#dictionaries = {
 		\ 'default'   : '',
 		\ 'vimshell'  : $HOME.'/.vimshell_hist',
-		\ 'perl'      : $HOME . '/.vim/dict/perl.dict',
 		\ 'scheme'    : $HOME.'/.gosh_completions'
 			\ }
 
@@ -374,9 +373,9 @@ if s:meet_neocomplete_requirements()
 	let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 	let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
-	" For perlomni.vim setting.
-	" https://github.com/c9s/perlomni.vim
-	let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+	" " For perlomni.vim setting.
+	" " https://github.com/c9s/perlomni.vim
+	" let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 else
     " 今までの neocomplcache の設定
 
@@ -468,7 +467,7 @@ else
 
 	" For perlomni.vim setting.
 	" https://github.com/c9s/perlomni.vim
-	let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+	" let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 endif
 
@@ -604,8 +603,8 @@ let g:syntastic_filetype_map = { 'tt2html':    'html',
 							   \ 'tx':         'html'}
 let g:syntastic_ruby_checkers = ['rubocop']
 
-let g:syntastic_enable_perl_checker = 1
-let g:syntastic_perl_checkers = ['perl', 'perlcritic']
+" let g:syntastic_enable_perl_checker = 1
+" let g:syntastic_perl_checkers = ['perl', 'perlcritic']
 
 " tern_for_vim settings ===================================
 " let g:tern_show_argument_hints=1
@@ -663,9 +662,9 @@ autocmd Filetype plantuml let &l:makeprg=g:plantuml_executable_script . " " .  f
 let g:Align_xstrlen=3
 
 
-" perl tidy ================================================
-nnoremap <Leader>fp <Esc>:%! perltidy<CR>
-vnoremap <Leader>fp <Esc>:'<,'>! perltidy<CR>
+" " perl tidy ================================================
+" nnoremap <Leader>fp <Esc>:%! perltidy<CR>
+" vnoremap <Leader>fp <Esc>:'<,'>! perltidy<CR>
 
 
 " JsBeautify settings  =====================================
@@ -696,10 +695,10 @@ let g:vimfiler_as_default_explorer = 1
 " let g:vimfiler_split_rule = "belowright"
 
 
-" tagbar settings ========================================
-set tags=tags,~/perl5/perlbrew/perls/perl-5.18.1/lib/tags
-let g:tagbar_autoclose = 1
-nnoremap <silent> <Leader>b :TagbarToggle<CR> " 'b'ar
+" " tagbar settings ========================================
+" set tags=tags,~/perl5/perlbrew/perls/perl-5.18.1/lib/tags
+" let g:tagbar_autoclose = 1
+" nnoremap <silent> <Leader>b :TagbarToggle<CR> " 'b'ar
 
 
 " quickrun settings ========================================
