@@ -191,7 +191,7 @@ NeoBundle 'Shougo/unite-outline'
 
 NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'thinca/vim-localrc'
-NeoBundle 'hail2u/vim-css3-syntax'
+" NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'jelera/vim-javascript-syntax'
 " NeoBundle 'marijnh/tern_for_vim', {
 "   \ 'build': {
@@ -206,10 +206,10 @@ NeoBundle 'tpope/vim-rails', { 'autoload' : {
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'groenewege/vim-less'
-NeoBundle 'vim-scripts/applescript.vim'
+" NeoBundle 'vim-scripts/applescript.vim'
 " NeoBundle 'fatih/vim-go'
 NeoBundle "aklt/plantuml-syntax"
-NeoBundle 'cocoa.vim'
+" NeoBundle 'cocoa.vim'
 
 " NeoBundle 'timcharper/textile.vim'
 "
@@ -222,7 +222,7 @@ NeoBundleLazy 'vim-jp/cpp-vim', {
 " Formatter
 
 NeoBundle 'Align'
-NeoBundle 'SQLUtilities'
+" NeoBundle 'SQLUtilities'
 NeoBundle 'maksimr/vim-jsbeautify'
 NeoBundle 'editorconfig/editorconfig-vim'
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
@@ -235,7 +235,7 @@ NeoBundle 'tpope/vim-fugitive'
 " NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'sudo.vim'
 " NeoBundle 'y-uuki/perl-local-lib-path.vim'
-NeoBundle 'tyru/open-browser.vim'
+" NeoBundle 'tyru/open-browser.vim'
 " NeoBundle 'sjl/gundo.vim'
 " NeoBundle 'Lokaltog/vim-easymotion'
 " NeoBundleLazy 'lambdalisue/vim-gista', {
@@ -247,12 +247,12 @@ NeoBundle 'tyru/open-browser.vim'
 
 " NeoBundle 'wesleyche/Trinity'
 " NeoBundle 'scrooloose/nerdtree.git' "nerdtree is included in trinity
-NeoBundle 'wesleyche/SrcExpl'
-NeoBundle 'thinca/vim-qfreplace'
+" NeoBundle 'wesleyche/SrcExpl'
+" NeoBundle 'thinca/vim-qfreplace'
 "NeoBundle 'taglist.vim' "Download from http://www.vim.org/scripts/download_script.php?src_id=19574
-NeoBundle "majutsushi/tagbar"
+" NeoBundle "majutsushi/tagbar"
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'tell-k/vim-browsereload-mac'
+" NeoBundle 'tell-k/vim-browsereload-mac'
 NeoBundle 'tpope/vim-surround'
 " NeoBundle 'mattn/zencoding-vim' " Moved to emmet-vim
 NeoBundle 'mattn/emmet-vim'
