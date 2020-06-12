@@ -914,21 +914,21 @@ endfunction
 nnoremap <Leader>ddi :<C-u>Ref webdict ej<Space>
 nnoremap <Leader>ddh :call ref#jump('normal', 'webdict', 'ej')<CR>
 
-" weblio english settings ========================================
+" " weblio english settings ========================================
 
-function! s:open_weblio(word)
-	call openbrowser#open('http://ejje.weblio.jp/content/' . a:word)
-endfunction
+" function! s:open_weblio(word)
+"     call openbrowser#open('http://ejje.weblio.jp/content/' . a:word)
+" endfunction
 
-function! s:open_weblio_under_cursor()
-	call openbrowser#open('http://ejje.weblio.jp/content/' . expand('<cword>'))
-endfunction
+" function! s:open_weblio_under_cursor()
+"     call openbrowser#open('http://ejje.weblio.jp/content/' . expand('<cword>'))
+" endfunction
 
-command! -nargs=1 OpenWeblio call s:open_weblio(<f-args>)
-command! -nargs=0 OpenWeblioUnderCursor call s:open_weblio_under_cursor()
+" command! -nargs=1 OpenWeblio call s:open_weblio(<f-args>)
+" command! -nargs=0 OpenWeblioUnderCursor call s:open_weblio_under_cursor()
 
-nnoremap <Leader>dpri :OpenWeblio<Space>
-nnoremap <Leader>dprh :OpenWeblioUnderCursor<CR>
+" nnoremap <Leader>dpri :OpenWeblio<Space>
+" nnoremap <Leader>dprh :OpenWeblioUnderCursor<CR>
 
 
 
@@ -936,7 +936,7 @@ nnoremap <Leader>dprh :OpenWeblioUnderCursor<CR>
 let g:returnApp = "iTerm"
 
 
-" " Checking typo. ================================================
+ " Checking typo. ================================================
 " " http://d.hatena.ne.jp/tyru/20130419/avoid_tyop （partially amended）
 " autocmd BufWriteCmd :*,*[,*] call s:write_check_typo(expand('<afile>'))
 " function! s:write_check_typo(file)
