@@ -12,3 +12,7 @@ set incsearch
 
 " 検索対象をハイライト
 set hlsearch
+
+" ビープ音を消す
+set visualbell
+set noerrorbells
