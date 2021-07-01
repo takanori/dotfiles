@@ -1,6 +1,7 @@
 [[ -s /usr/local/bin/zsh ]] && export SHELL=/usr/local/bin/zsh
 
 alias ls="gls --color=auto"
+alias alias sed='gsed'
 # alias ctags='/Applications/MacVim.app/Contents/MacOS/ctags "$@"'
 
 export PATH=/usr/bin:/usr/sbin:/sbin:/usr/X11/bin:~/bin:$PATH
