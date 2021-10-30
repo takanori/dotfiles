@@ -5,6 +5,8 @@ set scrolloff=10
 " set clipboard=unnamed,autoselect
 set clipboard+=unnamed
 
+set completeopt-=preview
+
 set backup
 set backupdir=$HOME/vimbackup
 
