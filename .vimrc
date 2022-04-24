@@ -5,6 +5,8 @@ set scrolloff=10
 " set clipboard=unnamed,autoselect
 set clipboard+=unnamed
 
+set completeopt-=preview
+
 set backup
 set backupdir=$HOME/vimbackup
 
@@ -555,7 +557,7 @@ nnoremap <silent> <Leader>ga  :<C-u>UniteResume search-buffer<CR>
 
 " vim-fugitive settings ====================================
 set diffopt=vertical
-nnoremap <silent> <Leader>vs :<C-u>Gstatus<CR>
+nnoremap <silent> <Leader>vs :<C-u>Git<CR>
 " nnoremap <silent> <Leader>vr :<C-u>Gread<CR>
 " nnoremap <silent> <Leader>vw :<C-u>Gwrite<CR>
 nnoremap <silent> <Leader>vc :<C-u>Gcommit<CR>
