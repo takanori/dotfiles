@@ -12,3 +12,7 @@ Assets/Plugins/ConsoleE
 # Rider
 Assets/Plugins/Editor/JetBrains
 Assets/Plugins/Editor/JetBrains.meta
+
+# 自分専用ディレクトリ
+Assets/_UzukaGitIgnored
+Assets/_UzukaGitIgnored.meta
