@@ -1,3 +1,5 @@
+vim.g.mapleader = "\\"
+
 -- vim-fugitive設定
 vim.opt.diffopt = "vertical"
 
