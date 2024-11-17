@@ -32,3 +32,11 @@ vim.api.nvim_set_keymap("n", "<C-X>", "<NOP>", { noremap = true, silent = true }
 
 vim.o.splitbelow = false
 vim.o.relativenumber = false
+
+-- 半角強制
+vim.cmd([[
+  if executable('zenhan')
+    autocmd InsertLeave * :call system('zenhan 0')
+    autocmd CmdlineLeave * :call system('zenhan 0')
+  endif
+]])
