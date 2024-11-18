@@ -7,7 +7,7 @@ foreach ($file in $DOT_FILES) {
     $source = "$HOME\dotfiles\$file"
     $destination = "$HOME\$file"
 
-    if (Test-Path -Path $destination -PathType Leaf -Or (Get-Item $destination).LinkType -eq "SymbolicLink") {
+    if ((Test-Path -Path $destination) -and ((Get-Item $destination).Attributes -match "ReparsePoint")) {
         Write-Output "$file already exists."
     } else {
         New-Item -ItemType SymbolicLink -Path $destination -Target $source | Out-Null
