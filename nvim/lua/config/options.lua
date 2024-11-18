@@ -34,9 +34,17 @@ vim.o.splitbelow = false
 vim.o.relativenumber = false
 
 -- 半角強制
-vim.cmd([[
-  if executable('zenhan')
-    autocmd InsertLeave * :call system('zenhan 0')
-    autocmd CmdlineLeave * :call system('zenhan 0')
-  endif
-]])
+if vim.fn.executable("zenhan") == 1 then
+  vim.api.nvim_create_autocmd("InsertLeave", {
+    pattern = "*",
+    callback = function()
+      vim.fn.system("zenhan 0")
+    end,
+  })
+  vim.api.nvim_create_autocmd("CmdlineLeave", {
+    pattern = "*",
+    callback = function()
+      vim.fn.system("zenhan 0")
+    end,
+  })
+end
