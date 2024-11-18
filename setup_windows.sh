@@ -3,7 +3,7 @@
 # Common Settings =============================================================
 
 # other dotfiles
-DOT_FILES=(.tigrc .gitignore_global .ideavimrc)
+DOT_FILES=(.tigrc .gitignore_global _vimrc .ideavimrc)
 
 for file in ${DOT_FILES[@]}; do
   if [ -L $HOME/$file ]; then
