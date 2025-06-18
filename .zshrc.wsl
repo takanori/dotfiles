@@ -6,6 +6,7 @@ export PATH="$PATH:/mnt/c/Windows/System32"
 alias explorer='/mnt/c/Windows/explorer.exe'
 alias clip='clip.exe'
 alias cdwin='cd /mnt/c/Users/teles'
+alias open='explorer.exe'
 
 # Default display when using an X server
 export DISPLAY=:0
