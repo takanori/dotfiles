@@ -2,15 +2,15 @@
 export PATH="$HOME/bin:$PATH"
 
 # for Luajit
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-export LD_LIBRARY_PATH
+#LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+#export LD_LIBRARY_PATH
 
 # Perl
-[ -s $HOME/perl5/perlbrew/etc/bashrc ] && source ~/perl5/perlbrew/etc/bashrc
+#[ -s $HOME/perl5/perlbrew/etc/bashrc ] && source ~/perl5/perlbrew/etc/bashrc
 
 # Ruby
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init - zsh)"
+#export PATH=$HOME/.rbenv/bin:$PATH
+#eval "$(rbenv init - zsh)"
 
 # Python
 export PYENV_ROOT="$HOME/.pyenv"
@@ -21,8 +21,8 @@ eval "$(pyenv init -)"
 [ -s $HOME/.nvm/nvm.sh ] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 # Luajit
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
-export LD_LIBRARY_PATH
+#LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+#export LD_LIBRARY_PATH
 
 # # terminal-notifier
 # # auto-notification
