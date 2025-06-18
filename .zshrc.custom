@@ -9,7 +9,7 @@ colors
 bindkey -v
 
 export EDITOR=nvim
-export LANG=ja_JP.UTF-8
+export LANG=C.UTF-8
 export KCODE=u
 export LESSCHARSET=utf-8
 
