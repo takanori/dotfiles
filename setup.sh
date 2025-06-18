@@ -78,20 +78,6 @@ do
 done
 
 
-# # perl
-
-# if [ ! -d ~/perl5/perlbrew ] ; then
-#   curl -L http://install.perlbrew.pl | bash
-#   source ~/perl5/perlbrew/etc/bashrc
-#   perlbrew install --notest perl-5.18.2
-#   perlbrew switch perl-5.18.2
-#   perlbrew install-cpanm
-#   cpanm Carton Reply App::watcher Perl::Tidy
-# else
-#   printf "%-30s is already installed.\n" perlbrew 
-# fi
-
-
 case ${OSTYPE} in
 	darwin*)
 		# Mac OS Settings ==============================================================
@@ -155,14 +141,6 @@ case ${OSTYPE} in
                                 ack-grep coreutils jq openssl \
                                 shellcheck silversearcher-ag \
                                 tig tree wget zsh locales
-                        # Ensure an English UTF-8 locale exists so that shells
-                        # started after setup do not show locale warnings such
-                        # as:
-                        #   "manpath: can't set the locale; make sure $LC_* and $LANG are correct"
-                        if command -v locale-gen >/dev/null 2>&1 ; then
-                                sudo locale-gen en_US.UTF-8
-                                sudo update-locale LANG=en_US.UTF-8
-                        fi
                 fi
 
 		# tmux config
