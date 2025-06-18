@@ -22,7 +22,7 @@ rm -f ~/.zshrc
 
 
 # other dotfiles
-DOT_FILES=( .tigrc .ctags .gemrc .gitignore_global .gvimrc .irbrc .perlcriticrc .perltidyrc .profile .rubocop.yml .vimrc .ideavimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.linux .zshrc.osx .zshrc.wsl .atcodertools.toml )
+DOT_FILES=( .tigrc .ctags .gemrc .gitignore_global .gvimrc .irbrc .perlcriticrc .perltidyrc .profile .rubocop.yml .ideavimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.linux .zshrc.osx .zshrc.wsl .vimrc_wsl .atcodertools.toml )
 
 for file in ${DOT_FILES[@]}
 do
@@ -34,6 +34,18 @@ do
 	fi
 done
 
+# Handle Vim configuration
+if grep -qi microsoft /proc/version 2>/dev/null ; then
+    VIMRC_TARGET=".vimrc_wsl"
+else
+    VIMRC_TARGET=".vimrc"
+fi
+if [ -L "$HOME/.vimrc" ] ; then
+    printf "%-30s already exists.\n" ".vimrc"
+else
+    ln -s "$HOME/dotfiles/$VIMRC_TARGET" "$HOME/.vimrc"
+    printf "Made symbolic link $HOME/.vimrc\n"
+fi
 
 # copy some dotfiles
 DOT_FILES_TO_COPY=( .gitconfig )
