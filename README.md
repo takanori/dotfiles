@@ -24,7 +24,9 @@ PATH entries and aliases for Windows tools.
 ## Neovim configuration
 
 This repository provides a Lua-based configuration for Neovim under the
-`nvim` directory. Running `setup.sh` creates a symbolic link at
+`nvim` directory and leverages the [LazyVim](https://www.lazyvim.org/)
+distribution. Running `setup.sh` creates a symbolic link at
 `~/.config/nvim` pointing to this folder so that Neovim automatically loads
-`init.lua`. When Neovim starts via the provided `.vimrc`, it forwards to this
-Lua configuration.
+`init.lua`, which bootstraps LazyVim using the files in the `lua` directory.
+When Neovim starts via the provided `.vimrc`, it forwards to this Lua
+configuration.

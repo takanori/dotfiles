@@ -1,4 +1,6 @@
--- Minimal Neovim configuration in Lua
-vim.opt.number = true
-vim.cmd('syntax on')
-vim.cmd('filetype plugin indent on')
+-- Set leader before loading plugins
+vim.g.mapleader = "\\"
+vim.g.maplocalleader = "\\"
+
+-- bootstrap lazy.nvim, LazyVim and user plugins
+require("config.lazy")
