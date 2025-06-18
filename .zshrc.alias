@@ -6,4 +6,5 @@
 #
 alias mv="mv -v"
 alias tree="tree -C"
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
