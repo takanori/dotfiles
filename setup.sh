@@ -22,7 +22,7 @@ rm -f ~/.zshrc
 
 
 # other dotfiles
-DOT_FILES=( .tigrc .ctags .gemrc .gitignore_global .gvimrc .irbrc .perlcriticrc .perltidyrc .profile .rubocop.yml .vimrc .ideavimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.linux .zshrc.osx .atcodertools.toml )
+DOT_FILES=( .tigrc .ctags .gemrc .gitignore_global .gvimrc .irbrc .perlcriticrc .perltidyrc .profile .rubocop.yml .vimrc .ideavimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.linux .zshrc.osx .zshrc.wsl .atcodertools.toml )
 
 for file in ${DOT_FILES[@]}
 do
