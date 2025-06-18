@@ -139,7 +139,7 @@ case ${OSTYPE} in
                         sudo apt install -y \
                                 ack-grep coreutils jq openssl \
                                 shellcheck silversearcher-ag neovim \
-                                tig tree wget zsh locales
+                                tig tree wget zsh locales build-essential
                 fi
 
 		# tmux config
