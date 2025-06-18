@@ -138,8 +138,18 @@ case ${OSTYPE} in
                         sudo apt update
                         sudo apt install -y \
                                 ack-grep coreutils jq openssl \
-                                shellcheck silversearcher-ag neovim \
+                                shellcheck silversearcher-ag curl \
                                 tig tree wget zsh locales build-essential
+                fi
+
+                # Install the latest Neovim AppImage
+                NVIM_APPIMAGE="$HOME/bin/nvim"
+                if [ ! -f "$NVIM_APPIMAGE" ] ; then
+                        curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o "$NVIM_APPIMAGE"
+                        chmod u+x "$NVIM_APPIMAGE"
+                        printf "Installed latest Neovim to $NVIM_APPIMAGE\n"
+                else
+                        printf "%-30s already exists.\n" "$NVIM_APPIMAGE"
                 fi
 
 		# tmux config
