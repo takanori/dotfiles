@@ -61,3 +61,16 @@ if [ -f '/Users/takanori.uzuka/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+case "$(uname -s)" in
+  Linux)
+    if grep -qi Microsoft /proc/version 2>/dev/null; then
+      [ -f ~/.zshrc.wsl ] && source ~/.zshrc.wsl
+    else
+      [ -f ~/.zshrc.linux ] && source ~/.zshrc.linux
+    fi
+    ;;
+  Darwin)
+    [ -f ~/.zshrc.osx ] && source ~/.zshrc.osx
+    ;;
+esac

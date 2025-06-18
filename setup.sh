@@ -5,13 +5,12 @@
 # vimbackup
 [ ! -d ~/vimbackup ] && mkdir ~/vimbackup
 
-# .vim folder
-if [ ! -d ~/.vim ] ; then
-	ln -s ~/dotfiles/vim ~/.vim
-	git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-else 
-	printf "%-30s already exists.\n" ~/.vim
-	# echo '~/.vim already exists.'
+# Neovim config
+if [ ! -d ~/.config/nvim ] ; then
+    mkdir -p ~/.config
+    ln -s ~/dotfiles/nvim ~/.config/nvim
+else
+    printf "%-30s already exists.\n" ~/.config/nvim
 fi
 
 
@@ -22,7 +21,7 @@ rm -f ~/.zshrc
 
 
 # other dotfiles
-DOT_FILES=( .tigrc .ctags .gemrc .gitignore_global .gvimrc .irbrc .perlcriticrc .perltidyrc .profile .rubocop.yml .vimrc .ideavimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.linux .zshrc.osx .atcodertools.toml )
+DOT_FILES=( .tigrc .ctags .gemrc .gitignore_global .gvimrc .irbrc .perlcriticrc .perltidyrc .profile .rubocop.yml .vimrc .ideavimrc .zshrc .zshrc.alias .zshrc.custom .zshrc.linux .zshrc.osx .zshrc.wsl .atcodertools.toml )
 
 for file in ${DOT_FILES[@]}
 do
@@ -76,20 +75,6 @@ do
 		printf "Made symbolic link $HOME/.tmuxinator/$tmuxinator_file\n"
 	fi
 done
-
-
-# # perl
-
-# if [ ! -d ~/perl5/perlbrew ] ; then
-#   curl -L http://install.perlbrew.pl | bash
-#   source ~/perl5/perlbrew/etc/bashrc
-#   perlbrew install --notest perl-5.18.2
-#   perlbrew switch perl-5.18.2
-#   perlbrew install-cpanm
-#   cpanm Carton Reply App::watcher Perl::Tidy
-# else
-#   printf "%-30s is already installed.\n" perlbrew 
-# fi
 
 
 case ${OSTYPE} in
@@ -147,6 +132,41 @@ case ${OSTYPE} in
 		;;
 	linux*)
 		# Linux Settings ===============================================================
+
+                # Install packages on apt based systems (such as WSL)
+                if command -v apt >/dev/null 2>&1 ; then
+                        sudo apt update
+                        sudo apt install -y \
+                                ack-grep coreutils jq openssl \
+                                shellcheck silversearcher-ag curl \
+                                tig tree wget zsh locales build-essential
+                fi
+
+                # Install the latest Neovim AppImage
+                NVIM_APPIMAGE="$HOME/bin/nvim"
+                if [ ! -f "$NVIM_APPIMAGE" ] ; then
+                        nvim_arch="$(uname -m)"
+                        case "$nvim_arch" in
+                                x86_64)
+                                        nvim_asset="nvim-linux-x86_64.appimage"
+                                        ;;
+                                aarch64|arm64)
+                                        nvim_asset="nvim-linux-arm64.appimage"
+                                        ;;
+                                *)
+                                        nvim_asset=""
+                                        ;;
+                        esac
+                        if [ -n "$nvim_asset" ] && curl -L --fail "https://github.com/neovim/neovim/releases/latest/download/$nvim_asset" -o "$NVIM_APPIMAGE" ; then
+                                chmod u+x "$NVIM_APPIMAGE"
+                                printf "Installed latest Neovim to $NVIM_APPIMAGE\n"
+                        else
+                                printf "Failed to download Neovim AppImage\n" >&2
+                                rm -f "$NVIM_APPIMAGE"
+                        fi
+                else
+                        printf "%-30s already exists.\n" "$NVIM_APPIMAGE"
+                fi
 
 		# tmux config
 		TMUX_LINUX_CONFIG_FILE=".tmux.linux.1.6.conf"

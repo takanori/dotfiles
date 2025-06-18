@@ -32,3 +32,19 @@ vim.api.nvim_set_keymap("n", "<C-X>", "<NOP>", { noremap = true, silent = true }
 
 vim.o.splitbelow = false
 vim.o.relativenumber = false
+
+-- 半角強制
+if vim.fn.executable("zenhan") == 1 then
+  vim.api.nvim_create_autocmd("InsertLeave", {
+    pattern = "*",
+    callback = function()
+      vim.fn.system("zenhan 0")
+    end,
+  })
+  vim.api.nvim_create_autocmd("CmdlineLeave", {
+    pattern = "*",
+    callback = function()
+      vim.fn.system("zenhan 0")
+    end,
+  })
+end

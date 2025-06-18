@@ -1,0 +1,10 @@
+# Settings for WSL (Windows Subsystem for Linux)
+# Add Windows system directories to PATH
+export PATH="$PATH:/mnt/c/Windows/System32"
+
+# Convenience aliases for accessing Windows tools
+alias explorer='/mnt/c/Windows/explorer.exe'
+alias clip='clip.exe'
+
+# Default display when using an X server
+export DISPLAY=:0
