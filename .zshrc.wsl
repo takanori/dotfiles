@@ -5,6 +5,7 @@ export PATH="$PATH:/mnt/c/Windows/System32"
 # Convenience aliases for accessing Windows tools
 alias explorer='/mnt/c/Windows/explorer.exe'
 alias clip='clip.exe'
+alias cdwin='cd /mnt/c/Users/teles'
 
 # Default display when using an X server
 export DISPLAY=:0
