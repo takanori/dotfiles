@@ -145,9 +145,13 @@ case ${OSTYPE} in
                 # Install the latest Neovim AppImage
                 NVIM_APPIMAGE="$HOME/bin/nvim"
                 if [ ! -f "$NVIM_APPIMAGE" ] ; then
-                        curl -L https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o "$NVIM_APPIMAGE"
-                        chmod u+x "$NVIM_APPIMAGE"
-                        printf "Installed latest Neovim to $NVIM_APPIMAGE\n"
+                        if curl -L --fail https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o "$NVIM_APPIMAGE" ; then
+                                chmod u+x "$NVIM_APPIMAGE"
+                                printf "Installed latest Neovim to $NVIM_APPIMAGE\n"
+                        else
+                                printf "Failed to download Neovim AppImage\n" >&2
+                                rm -f "$NVIM_APPIMAGE"
+                        fi
                 else
                         printf "%-30s already exists.\n" "$NVIM_APPIMAGE"
                 fi
