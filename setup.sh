@@ -148,6 +148,15 @@ case ${OSTYPE} in
 	linux*)
 		# Linux Settings ===============================================================
 
+                # Install packages on apt based systems (such as WSL)
+                if command -v apt >/dev/null 2>&1 ; then
+                        sudo apt update
+                        sudo apt install -y \
+                                ack-grep coreutils exuberant-ctags jq openssl \
+                                libreadline-dev shellcheck silversearcher-ag \
+                                tig tree wget zsh
+                fi
+
 		# tmux config
 		TMUX_LINUX_CONFIG_FILE=".tmux.linux.1.6.conf"
 		if [ -L $HOME/.tmux.conf ] ; then
