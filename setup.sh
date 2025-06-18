@@ -5,13 +5,12 @@
 # vimbackup
 [ ! -d ~/vimbackup ] && mkdir ~/vimbackup
 
-# .vim folder
-if [ ! -d ~/.vim ] ; then
-	ln -s ~/dotfiles/vim ~/.vim
-	git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-else 
-	printf "%-30s already exists.\n" ~/.vim
-	# echo '~/.vim already exists.'
+# Neovim config
+if [ ! -d ~/.config/nvim ] ; then
+    mkdir -p ~/.config
+    ln -s ~/dotfiles/nvim ~/.config/nvim
+else
+    printf "%-30s already exists.\n" ~/.config/nvim
 fi
 
 
@@ -139,7 +138,7 @@ case ${OSTYPE} in
                         sudo apt update
                         sudo apt install -y \
                                 ack-grep coreutils jq openssl \
-                                shellcheck silversearcher-ag \
+                                shellcheck silversearcher-ag neovim \
                                 tig tree wget zsh locales
                 fi
 

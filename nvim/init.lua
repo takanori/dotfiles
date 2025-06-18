@@ -1,2 +1,4 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
-require("config.lazy")
+-- Minimal Neovim configuration
+vim.opt.number = true
+vim.cmd('syntax on')
+vim.cmd('filetype plugin indent on')
