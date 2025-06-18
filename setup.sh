@@ -154,7 +154,15 @@ case ${OSTYPE} in
                         sudo apt install -y \
                                 ack-grep coreutils jq openssl \
                                 shellcheck silversearcher-ag \
-                                tig tree wget zsh
+                                tig tree wget zsh locales
+                        # Ensure an English UTF-8 locale exists so that shells
+                        # started after setup do not show locale warnings such
+                        # as:
+                        #   "manpath: can't set the locale; make sure $LC_* and $LANG are correct"
+                        if command -v locale-gen >/dev/null 2>&1 ; then
+                                sudo locale-gen en_US.UTF-8
+                                sudo update-locale LANG=en_US.UTF-8
+                        fi
                 fi
 
 		# tmux config
