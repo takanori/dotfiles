@@ -152,8 +152,8 @@ case ${OSTYPE} in
                 if command -v apt >/dev/null 2>&1 ; then
                         sudo apt update
                         sudo apt install -y \
-                                ack-grep coreutils exuberant-ctags jq openssl \
-                                libreadline-dev shellcheck silversearcher-ag \
+                                ack-grep coreutils jq openssl \
+                                shellcheck silversearcher-ag \
                                 tig tree wget zsh
                 fi
 
