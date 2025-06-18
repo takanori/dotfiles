@@ -14,6 +14,9 @@ cd ~/dotfiles
 bash setup.sh
 ```
 
+The setup script ensures the English UTF-8 locale is available so that commands
+such as `man` do not show locale related warnings.
+
 This will create symbolic links for the configuration files in your home directory.
 When Zsh starts on WSL, `.zshrc` automatically loads `.zshrc.wsl`, which sets useful
 PATH entries and aliases for Windows tools.
