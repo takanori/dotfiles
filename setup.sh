@@ -145,7 +145,19 @@ case ${OSTYPE} in
                 # Install the latest Neovim AppImage
                 NVIM_APPIMAGE="$HOME/bin/nvim"
                 if [ ! -f "$NVIM_APPIMAGE" ] ; then
-                        if curl -L --fail https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o "$NVIM_APPIMAGE" ; then
+                        nvim_arch="$(uname -m)"
+                        case "$nvim_arch" in
+                                x86_64)
+                                        nvim_asset="nvim-linux-x86_64.appimage"
+                                        ;;
+                                aarch64|arm64)
+                                        nvim_asset="nvim-linux-arm64.appimage"
+                                        ;;
+                                *)
+                                        nvim_asset=""
+                                        ;;
+                        esac
+                        if [ -n "$nvim_asset" ] && curl -L --fail "https://github.com/neovim/neovim/releases/latest/download/$nvim_asset" -o "$NVIM_APPIMAGE" ; then
                                 chmod u+x "$NVIM_APPIMAGE"
                                 printf "Installed latest Neovim to $NVIM_APPIMAGE\n"
                         else
