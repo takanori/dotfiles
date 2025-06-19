@@ -20,6 +20,7 @@ such as `man` do not show locale related warnings.
 This will create symbolic links for the configuration files in your home directory.
 When Zsh starts on WSL, `.zshrc` automatically loads `.zshrc.wsl`, which sets useful
 PATH entries and aliases for Windows tools.
+`setup.sh` also configures Git when running under WSL so that line endings and file attributes match Windows.
 The script also downloads the latest Neovim AppImage to `~/bin/nvim` so you can use a modern version regardless of the packages provided by your distribution. If the download fails due to network restrictions, remove the partially downloaded file and install Neovim manually.
 
 ## Neovim configuration
