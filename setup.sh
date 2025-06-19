@@ -142,6 +142,13 @@ case ${OSTYPE} in
                                 tig tree wget zsh locales build-essential
                 fi
 
+                # When running inside WSL, align Git settings with Windows
+                if grep -qi Microsoft /proc/version 2>/dev/null; then
+                        git config --global core.autocrlf true
+                        git config --global core.filemode false
+                        git config --global core.ignorecase true
+                fi
+
                 # Install the latest Neovim AppImage
                 NVIM_APPIMAGE="$HOME/bin/nvim"
                 if [ ! -f "$NVIM_APPIMAGE" ] ; then
