@@ -48,3 +48,6 @@ if vim.fn.executable("zenhan") == 1 then
     end,
   })
 end
+
+-- スクロールなめらかにしない
+vim.g.snacks_animate = false

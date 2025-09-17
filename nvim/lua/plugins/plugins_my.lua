@@ -18,4 +18,11 @@ return {
     "tpope/vim-fugitive",
     lazy = false, -- このオプションは、Lazy.nvimの設定に合わせて変更可能です
   },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    init = function()
+      -- use clang when compiling parsers to avoid missing gcc on new systems
+      require("nvim-treesitter.install").compilers = { "clang" }
+    end,
+  },
 }
