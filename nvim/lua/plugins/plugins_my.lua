@@ -13,6 +13,12 @@ vim.api.nvim_set_keymap("n", "<Leader>vu", ":diffupdate<CR>", { noremap = true, 
 vim.api.nvim_set_keymap("n", "<Leader>2", ":diffget //2 | diffupdate<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>3", ":diffget //3 | diffupdate<CR>", { noremap = true, silent = true })
 
+-- 内蔵diffを使う（外部diffを使わない）
+vim.opt.diffexpr = ""
+vim.opt.diffopt:append("internal")
+vim.opt.diffopt:append("indent-heuristic")
+vim.opt.diffopt:append("algorithm:patience")
+
 return {
   {
     "tpope/vim-fugitive",
