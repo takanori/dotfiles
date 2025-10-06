@@ -20,9 +20,6 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    init = function()
-      -- use clang when compiling parsers to avoid missing gcc on new systems
-      require("nvim-treesitter.install").compilers = { "clang" }
-    end,
+    enabled = false,
   },
 }
